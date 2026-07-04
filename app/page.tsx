@@ -8,6 +8,9 @@ import {
   Sprout,
 } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
+import { BootcampHero } from "@/components/bootcamp/BootcampHero";
+import { BootcampTimeline } from "@/components/bootcamp/BootcampTimeline";
+import { WhatsIncluded } from "@/components/bootcamp/WhatsIncluded";
 import { LessonCard } from "@/components/LessonCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { lessons } from "@/lib/lessons";
@@ -40,8 +43,43 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/lessons">Browse Lessons</ButtonLink>
+              <ButtonLink href="/signup" variant="secondary">
+                Create Account
+              </ButtonLink>
+              <ButtonLink
+                href="/login"
+                variant="ghost"
+                className="bg-white/10 text-white hover:bg-white/15"
+              >
+                Log In
+              </ButtonLink>
               <ButtonLink href="/contact" variant="secondary">
                 Contact Us
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-4 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
+                Accounts
+              </p>
+              <h2 className="mt-1 text-2xl font-bold text-slate-950">
+                Create an account to manage bootcamp applications.
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Lessons stay free and public. Accounts are for teachers,
+                parents or guardians, administrators, and program partners.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/signup">Create Account</ButtonLink>
+              <ButtonLink href="/login" variant="secondary">
+                Log In
               </ButtonLink>
             </div>
           </div>
@@ -69,6 +107,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <BootcampHero compact />
+      <BootcampTimeline />
+      <WhatsIncluded />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

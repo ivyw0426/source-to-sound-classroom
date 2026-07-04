@@ -208,6 +208,22 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               and available supervision.
             </p>
           </section>
+
+          <section className="rounded-lg border border-water-100 bg-water-50 p-5">
+            <h2 className="text-lg font-bold text-water-900">
+              Online Bootcamp
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              Students who want to go deeper can apply for the four-week online
+              environmental research bootcamp with adult registration.
+            </p>
+            <Link
+              href="/bootcamp"
+              className="focus-ring mt-4 inline-flex min-h-10 items-center justify-center rounded-md bg-water-700 px-4 py-2 text-sm font-semibold text-white hover:bg-water-900"
+            >
+              Explore Bootcamp
+            </Link>
+          </section>
         </aside>
       </section>
 

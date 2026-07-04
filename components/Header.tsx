@@ -1,15 +1,21 @@
 import Link from "next/link";
-import { Droplets, ExternalLink } from "lucide-react";
+import { Droplets } from "lucide-react";
+import { logoutAction } from "@/app/auth-actions";
+import { UserMenu } from "@/components/auth/UserMenu";
+import { getCurrentUser } from "@/lib/supabase/server";
 
 const navItems = [
   { href: "/lessons", label: "Lessons" },
-  { href: "/teacher-resources", label: "Resources" },
-  { href: "/student-showcase", label: "Showcase" },
+  { href: "/bootcamp", label: "Online Bootcamp", badge: true },
+  { href: "/teacher-resources", label: "Teacher Resources" },
+  { href: "/student-showcase", label: "Student Showcase" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
-export function Header() {
+export async function Header() {
+  const user = await getCurrentUser();
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
       <nav
@@ -37,16 +43,15 @@ export function Header() {
               className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-water-50 hover:text-water-900"
             >
               {item.label}
+              {item.badge ? (
+                <span className="ml-2 rounded-full bg-sun-100 px-2 py-0.5 text-[10px] font-bold uppercase text-water-900">
+                  New
+                </span>
+              ) : null}
             </Link>
           ))}
         </div>
-        <Link
-          href="/contact"
-          className="focus-ring hidden items-center gap-2 rounded-md bg-forest-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-forest-900 sm:inline-flex"
-        >
-          Support Our Work
-          <ExternalLink aria-hidden="true" size={15} />
-        </Link>
+        <UserMenu user={user} />
       </nav>
       <div className="flex gap-1 overflow-x-auto border-t border-slate-100 px-4 py-2 md:hidden">
         {navItems.map((item) => (
@@ -58,6 +63,39 @@ export function Header() {
             {item.label}
           </Link>
         ))}
+        {user ? (
+          <>
+            <Link
+              href="/account"
+              className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+            >
+              My Account
+            </Link>
+            <form action={logoutAction}>
+              <button
+                type="submit"
+                className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+              >
+                Log Out
+              </button>
+            </form>
+          </>
+        ) : (
+          <>
+            <Link
+              href="/login"
+              className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+            >
+              Log In
+            </Link>
+            <Link
+              href="/signup"
+              className="focus-ring shrink-0 rounded-md bg-water-700 px-3 py-2 text-sm font-semibold text-white"
+            >
+              Create Account
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );

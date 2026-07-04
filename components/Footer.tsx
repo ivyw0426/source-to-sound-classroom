@@ -33,6 +33,15 @@ export function Footer() {
             <Link className="hover:text-water-900" href="/student-showcase">
               Student Showcase
             </Link>
+            <Link className="hover:text-water-900" href="/bootcamp">
+              Online Bootcamp
+            </Link>
+            <Link className="hover:text-water-900" href="/privacy">
+              Privacy
+            </Link>
+            <Link className="hover:text-water-900" href="/terms">
+              Terms
+            </Link>
           </div>
         </div>
         <div>
