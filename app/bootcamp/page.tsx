@@ -146,7 +146,7 @@ export default function BootcampPage() {
                 Ready to request a class slot?
               </h2>
               <p className="mt-3 text-sm leading-6 text-forest-50">
-                Create or log into an adult account to submit the application.
+                Create or log into an account to submit the application.
               </p>
             </div>
             <Link

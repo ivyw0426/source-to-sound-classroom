@@ -36,12 +36,20 @@ The service role key is server-only and is not required for the current MVP user
 1. Create a Supabase project.
 2. Enable email/password authentication.
 3. In Supabase SQL Editor, run `supabase/schema.sql`.
-4. Add local and production redirect URLs:
+4. In Authentication > URL Configuration, set the local Site URL while testing:
+   - `http://127.0.0.1:3000`
+5. Add local and production redirect URLs:
    - `http://localhost:3000/auth/callback`
    - `http://localhost:3000/auth/callback?next=/account`
    - `http://localhost:3000/auth/callback?next=/reset-password`
+   - `http://127.0.0.1:3000/auth/callback`
+   - `http://127.0.0.1:3000/auth/callback?next=/account`
+   - `http://127.0.0.1:3000/auth/callback?next=/reset-password`
    - your Vercel production equivalents
-5. Add the environment variables to `.env.local` and to Vercel Project Settings.
+6. Add the environment variables to `.env.local` and to Vercel Project Settings.
+7. Restart the local dev server after editing `.env.local`.
+
+For first local testing, you can temporarily disable required email confirmation in Supabase Authentication settings. Turn confirmation back on before inviting real users.
 
 The schema creates:
 

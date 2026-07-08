@@ -228,7 +228,7 @@ export const bootcampFaqs = [
   {
     question: "What happens after an application is submitted?",
     answer:
-      "The application appears in the adult account dashboard with a Submitted status. The program team can follow up about acceptance, waitlist status, or next steps.",
+      "The application appears in the account dashboard with a Submitted status. The program team can follow up about acceptance, waitlist status, or next steps.",
   },
 ];
 

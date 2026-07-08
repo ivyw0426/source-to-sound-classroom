@@ -35,7 +35,7 @@ export function AuthForm({
 
   const title =
     mode === "signup"
-      ? "Create an adult account"
+      ? "Create an account"
       : mode === "forgot-password"
         ? "Reset your password"
         : mode === "reset-password"
@@ -44,7 +44,7 @@ export function AuthForm({
 
   const description =
     mode === "signup"
-      ? "Accounts are for adults registering a student, classroom, or program group. Students can browse lessons without an account."
+      ? "Create an account to manage bootcamp applications, classroom support, and program participation. Students can browse lessons without an account."
       : mode === "forgot-password"
         ? "Enter your account email and we will send a reset link if the account exists."
         : mode === "reset-password"

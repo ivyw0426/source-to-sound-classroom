@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "Privacy notes for Source to Sound Classroom lessons, adult accounts, and bootcamp applications.",
+    "Privacy notes for Source to Sound Classroom lessons, accounts, and bootcamp applications.",
 };
 
 export default function PrivacyPage() {
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           submissions.
         </p>
         <p>
-          Adult accounts may be used by teachers, parents or guardians, school
+          Accounts may be used by teachers, parents or guardians, school
           administrators, and program partners. Bootcamp applications collect
           adult contact information, student first name, grade, general research
           interests, and class-slot preferences. The site does not request
