@@ -13,7 +13,8 @@ create table if not exists public.profiles (
       'Teacher',
       'Parent or Guardian',
       'School Administrator',
-      'Community or Program Partner'
+      'Community or Program Partner',
+      'Source to Sound Administrator'
     )
   ),
   created_at timestamptz not null default now(),
@@ -30,7 +31,8 @@ create table if not exists public.bootcamp_registrations (
       'Teacher',
       'Parent or Guardian',
       'School Administrator',
-      'Community or Program Partner'
+      'Community or Program Partner',
+      'Source to Sound Administrator'
     )
   ),
   school_or_organization text not null,

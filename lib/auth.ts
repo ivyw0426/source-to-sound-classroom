@@ -3,6 +3,7 @@ export const adultRoles = [
   "Parent or Guardian",
   "School Administrator",
   "Community or Program Partner",
+  "Source to Sound Administrator",
 ] as const;
 
 export type AdultRole = (typeof adultRoles)[number];

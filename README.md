@@ -94,6 +94,36 @@ Programs serving minors should receive professional privacy, legal, and school-p
 
 Deploy to Vercel as a Next.js project. Leave the Vercel Output Directory blank/default. Add Supabase environment variables in Vercel Project Settings before enabling accounts and applications.
 
+## Cloudflare Workers Deployment
+
+This app uses Next.js server features for accounts, auth callbacks, and bootcamp applications, so deploy it to Cloudflare Workers with the OpenNext adapter rather than as a static export.
+
+Cloudflare dashboard settings:
+
+- Project type: Workers / Next.js app connected to GitHub
+- Repository: `ivyw0426/source-to-sound-classroom`
+- Production branch: `main`
+- Install command: `pnpm install`
+- Build command: `pnpm run build`
+- Deploy command: `pnpm run deploy`
+- Non-production branch deploy command: `pnpm run upload`
+
+Add these Cloudflare build/runtime variables:
+
+```text
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_SITE_URL=https://sourcetosound.org
+```
+
+After the first Cloudflare deployment succeeds, add the custom domain `sourcetosound.org` in the Worker settings, then add Cloudflare DNS records if prompted. Also add these production callback URLs in Supabase Authentication URL Configuration:
+
+```text
+https://sourcetosound.org/auth/callback
+https://sourcetosound.org/auth/callback?next=/account
+https://sourcetosound.org/auth/callback?next=/reset-password
+```
+
 ## Placeholders
 
 - Bootcamp cohort dates are placeholders until final dates are announced.
