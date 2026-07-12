@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { BookOpen, Droplets, HeartHandshake, Sprout } from "lucide-react";
+import {
+  BookOpen,
+  Camera,
+  Droplets,
+  HeartHandshake,
+  Leaf,
+  Sprout,
+} from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -8,6 +15,21 @@ export const metadata: Metadata = {
   description:
     "Learn about Source to Sound, a student-founded nonprofit focused on environmental education, stormwater runoff, salmon habitat, and hands-on watershed learning.",
 };
+
+const founders = [
+  {
+    name: "Founder Name",
+    role: "Founder",
+    initials: "ST",
+    bio: "Add a short founder bio here with environmental education experience, school background, and the story behind Source to Sound.",
+  },
+  {
+    name: "Founder Name",
+    role: "Co-Founder",
+    initials: "SS",
+    bio: "Use this space for another founder profile, including why watershed learning, salmon habitat, and student-led projects matter.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -88,6 +110,56 @@ export default function AboutPage() {
                 <h2 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
+          <div>
+            <SectionHeading eyebrow="Founders" title="Meet the people behind Source to Sound">
+              This section is ready for founder photos, names, roles, and short
+              bios as the nonprofit story grows.
+            </SectionHeading>
+            <div className="mt-6 rounded-lg border border-forest-100 bg-forest-50 p-5">
+              <Leaf aria-hidden="true" size={24} className="text-forest-700" />
+              <p className="mt-4 text-sm leading-6 text-slate-700">
+                Keep founder profiles concise, credible, and teacher-facing:
+                what you started, why it matters, and how schools can work with
+                you.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {founders.map((founder) => (
+              <article
+                key={founder.role}
+                className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm"
+              >
+                <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-forest-100 via-water-50 to-white">
+                  <div className="text-center">
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white text-2xl font-bold text-forest-700 shadow-sm">
+                      {founder.initials}
+                    </div>
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-md bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-wide text-forest-700">
+                      <Camera aria-hidden="true" size={14} />
+                      Photo coming soon
+                    </div>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h2 className="text-xl font-bold text-slate-950">
+                    {founder.name}
+                  </h2>
+                  <p className="mt-1 text-sm font-semibold text-forest-700">
+                    {founder.role}
+                  </p>
+                  <p className="mt-4 text-sm leading-6 text-slate-600">
+                    {founder.bio}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>

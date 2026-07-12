@@ -1,7 +1,10 @@
+import Link from "next/link";
 import {
+  ArrowRight,
   BookOpenCheck,
   ClipboardList,
   Droplets,
+  HeartHandshake,
   Map,
   School,
   ShieldCheck,
@@ -16,6 +19,30 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { lessons } from "@/lib/lessons";
 
 const featuredLessons = lessons.filter((lesson) => lesson.featured);
+
+const homePathways = [
+  {
+    icon: BookOpenCheck,
+    title: "Find a classroom lesson",
+    text: "Search project-based watershed lessons by topic, time, difficulty, and activity type.",
+    href: "/lessons",
+    action: "Browse lessons",
+  },
+  {
+    icon: Map,
+    title: "Join the research bootcamp",
+    text: "Explore the online pathway for students who want to build mapping, writing, and research skills.",
+    href: "/bootcamp",
+    action: "Explore bootcamp",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Partner with Source to Sound",
+    text: "Connect around classroom support, symposium work, volunteer help, or curriculum collaboration.",
+    href: "/contact",
+    action: "Contact us",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -57,6 +84,40 @@ export default function HomePage() {
                 Contact Us
               </ButtonLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {homePathways.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="focus-ring group rounded-lg border border-forest-100 bg-gradient-to-br from-white to-forest-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-forest-700 text-white">
+                    <item.icon aria-hidden="true" size={22} />
+                  </span>
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="mt-2 text-forest-700 transition group-hover:translate-x-1"
+                    size={19}
+                  />
+                </div>
+                <h2 className="mt-5 text-lg font-bold text-slate-950">
+                  {item.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {item.text}
+                </p>
+                <p className="mt-5 text-sm font-bold text-forest-700">
+                  {item.action}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Droplets } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { logoutAction } from "@/app/auth-actions";
 import { UserMenu } from "@/components/auth/UserMenu";
 import { getCurrentUser } from "@/lib/supabase/server";
@@ -24,7 +24,7 @@ export async function Header() {
       >
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-md">
           <span className="flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white">
-            <Droplets aria-hidden="true" size={21} />
+            <Leaf aria-hidden="true" size={21} />
           </span>
           <span className="leading-tight">
             <span className="block text-base font-bold text-water-900">
