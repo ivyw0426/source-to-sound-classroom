@@ -1,17 +1,15 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Download, FileText } from "lucide-react";
+import { ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import { useState } from "react";
 
 type LessonSlideDeckProps = {
   title: string;
-  pdfHref?: string;
   slideImages: string[];
 };
 
 export function LessonSlideDeck({
   title,
-  pdfHref,
   slideImages,
 }: LessonSlideDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,50 +61,28 @@ export function LessonSlideDeck({
         )}
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={showPreviousSlide}
-            disabled={!hasSlides || currentIndex === 0}
-            aria-label="Previous slide"
-            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
-          >
-            <ChevronLeft aria-hidden="true" size={20} />
-          </button>
-          <button
-            type="button"
-            onClick={showNextSlide}
-            disabled={!hasSlides || currentIndex === slideImages.length - 1}
-            aria-label="Next slide"
-            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
-          >
-            <ChevronRight aria-hidden="true" size={20} />
-          </button>
-          <span className="text-sm font-semibold text-slate-600">
-            {hasSlides ? `Slide ${currentIndex + 1} of ${slideImages.length}` : "Slides coming soon"}
-          </span>
-        </div>
-
-        {pdfHref ? (
-          <a
-            href={pdfHref}
-            download
-            className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-forest-700 px-4 py-2 text-sm font-semibold text-white hover:bg-forest-900"
-          >
-            Download PDF
-            <Download aria-hidden="true" size={16} />
-          </a>
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-slate-200 px-4 py-2 text-sm font-semibold text-slate-500"
-          >
-            Download PDF
-            <span className="text-xs">Coming soon</span>
-          </button>
-        )}
+      <div className="mt-4 flex items-center justify-center gap-2">
+        <button
+          type="button"
+          onClick={showPreviousSlide}
+          disabled={!hasSlides || currentIndex === 0}
+          aria-label="Previous slide"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
+        >
+          <ChevronLeft aria-hidden="true" size={20} />
+        </button>
+        <span className="min-w-28 text-center text-sm font-semibold text-slate-600">
+          {hasSlides ? `Slide ${currentIndex + 1} of ${slideImages.length}` : "Slides coming soon"}
+        </span>
+        <button
+          type="button"
+          onClick={showNextSlide}
+          disabled={!hasSlides || currentIndex === slideImages.length - 1}
+          aria-label="Next slide"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
+        >
+          <ChevronRight aria-hidden="true" size={20} />
+        </button>
       </div>
     </section>
   );

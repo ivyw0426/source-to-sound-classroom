@@ -125,7 +125,6 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
           <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.75fr)]">
             <LessonSlideDeck
               title={lesson.deck.title}
-              pdfHref={lesson.deck.pdfHref}
               slideImages={lesson.deck.slideImages}
             />
 
