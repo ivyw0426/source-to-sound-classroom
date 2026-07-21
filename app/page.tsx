@@ -17,6 +17,7 @@ import { WhatsIncluded } from "@/components/bootcamp/WhatsIncluded";
 import { LessonCard } from "@/components/LessonCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { lessons } from "@/lib/lessons";
+import { getCurrentUser } from "@/lib/supabase/server";
 
 const featuredLessons = lessons.filter((lesson) => lesson.featured);
 
@@ -44,7 +45,9 @@ const homePathways = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const user = await getCurrentUser();
+
   return (
     <>
       <section className="relative overflow-hidden bg-water-900">
@@ -67,16 +70,24 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/lessons">Browse Lessons</ButtonLink>
-              <ButtonLink href="/signup" variant="secondary">
-                Create Account
-              </ButtonLink>
-              <ButtonLink
-                href="/login"
-                variant="ghost"
-                className="bg-white/10 text-white hover:bg-white/15"
-              >
-                Log In
-              </ButtonLink>
+              {user ? (
+                <ButtonLink href="/account" variant="secondary">
+                  My Account
+                </ButtonLink>
+              ) : (
+                <>
+                  <ButtonLink href="/signup" variant="secondary">
+                    Create Account
+                  </ButtonLink>
+                  <ButtonLink
+                    href="/login"
+                    variant="ghost"
+                    className="bg-white/10 text-white hover:bg-white/15"
+                  >
+                    Log In
+                  </ButtonLink>
+                </>
+              )}
               <ButtonLink href="/contact" variant="secondary">
                 Contact Us
               </ButtonLink>
@@ -127,18 +138,27 @@ export default function HomePage() {
                 Accounts
               </p>
               <h2 className="mt-1 text-2xl font-bold text-slate-950">
-                Create an account to manage bootcamp applications.
+                {user
+                  ? "Manage your Source to Sound account."
+                  : "Create an account to manage bootcamp applications."}
               </h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Lessons stay free and public. Accounts are for teachers,
-                parents or guardians, administrators, and program partners.
+                {user
+                  ? "Your account is ready for bootcamp applications, classroom support, and program participation."
+                  : "Lessons stay free and public. Accounts are for teachers, parents or guardians, administrators, and program partners."}
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/signup">Create Account</ButtonLink>
-              <ButtonLink href="/login" variant="secondary">
-                Log In
-              </ButtonLink>
+              {user ? (
+                <ButtonLink href="/account">My Account</ButtonLink>
+              ) : (
+                <>
+                  <ButtonLink href="/signup">Create Account</ButtonLink>
+                  <ButtonLink href="/login" variant="secondary">
+                    Log In
+                  </ButtonLink>
+                </>
+              )}
             </div>
           </div>
         </div>

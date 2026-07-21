@@ -144,59 +144,24 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                 </div>
               </section>
 
-              <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-water-50 text-water-700">
-                    <Download aria-hidden="true" size={21} />
-                  </span>
-                  <h3 className="text-lg font-bold text-slate-950">
-                    Handouts and templates
-                  </h3>
-                </div>
-                <div className="mt-5 grid gap-3">
-                  {lesson.deck.pdfHref ? (
-                    <a
-                      href={lesson.deck.pdfHref}
-                      download
-                      className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-water-700 px-4 py-3 text-left text-sm font-semibold text-white hover:bg-water-900"
-                    >
-                      <span>{lesson.deck.title} PDF</span>
-                      <Download aria-hidden="true" size={16} />
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      disabled
-                      className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
-                    >
-                      <span>{lesson.deck.title} PDF</span>
-                      <span className="text-xs">Coming soon</span>
-                    </button>
-                  )}
-                  {lesson.downloads.map((download) =>
-                    download.href ? (
-                      <a
-                        key={download.label}
-                        href={download.href}
-                        className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-water-700 px-4 py-3 text-sm font-semibold text-white hover:bg-water-900"
-                      >
-                        {download.label}
-                        <Download aria-hidden="true" size={16} />
-                      </a>
-                    ) : (
-                      <button
-                        key={download.label}
-                        type="button"
-                        disabled
-                        className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
-                      >
-                        <span>{download.label}</span>
-                        <span className="text-xs">Coming soon</span>
-                      </button>
-                    ),
-                  )}
-                </div>
-              </section>
+              {lesson.deck.pdfHref ? (
+                <a
+                  href={lesson.deck.pdfHref}
+                  download
+                  className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-water-900"
+                >
+                  Download {lesson.deck.title} PDF
+                  <Download aria-hidden="true" size={16} />
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-500"
+                >
+                  {lesson.deck.title} PDF coming soon
+                </button>
+              )}
             </div>
           </div>
         </div>
