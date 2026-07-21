@@ -6,7 +6,6 @@ import {
   ClipboardCheck,
   Clock,
   Download,
-  FileText,
   GraduationCap,
   Package,
   Sparkles,
@@ -14,6 +13,7 @@ import {
 import Link from "next/link";
 import type { AriaAttributes, ComponentType } from "react";
 import { LessonCard } from "@/components/LessonCard";
+import { LessonSlideDeck } from "@/components/LessonSlideDeck";
 import { getLessonBySlug, getRelatedLessons, lessons } from "@/lib/lessons";
 
 type LessonPageProps = {
@@ -119,45 +119,15 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               Lesson deck and downloads
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              The full lesson slide deck will be posted here as a PDF.
+              View the lesson slides below or download the PDF when available.
             </p>
           </div>
           <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.75fr)]">
-            <section className="flex min-h-[420px] flex-col rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h3 className="text-xl font-bold text-slate-950">
-                    Lesson PPT PDF
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    PDF preview placeholder for the complete lesson slides.
-                  </p>
-                </div>
-                <span className="rounded-md bg-water-50 px-3 py-1.5 text-xs font-bold uppercase text-water-900">
-                  Coming soon
-                </span>
-              </div>
-              <div className="mt-5 flex flex-1 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white">
-                <div className="px-6 text-center">
-                  <FileText
-                    aria-hidden="true"
-                    size={42}
-                    className="mx-auto text-water-700"
-                  />
-                  <p className="mt-4 text-sm font-semibold text-slate-700">
-                    Add the PDF file later and link it here.
-                  </p>
-                </div>
-              </div>
-              <button
-                type="button"
-                disabled
-                className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-slate-200 px-4 py-3 text-sm font-semibold text-slate-500"
-              >
-                Download lesson PPT PDF
-                <span className="text-xs">Coming soon</span>
-              </button>
-            </section>
+            <LessonSlideDeck
+              title={lesson.deck.title}
+              pdfHref={lesson.deck.pdfHref}
+              slideImages={lesson.deck.slideImages}
+            />
 
             <div className="grid gap-5">
               <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
@@ -184,14 +154,25 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                   </h3>
                 </div>
                 <div className="mt-5 grid gap-3">
-                  <button
-                    type="button"
-                    disabled
-                    className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
-                  >
-                    <span>Lesson PPT PDF</span>
-                    <span className="text-xs">Coming soon</span>
-                  </button>
+                  {lesson.deck.pdfHref ? (
+                    <a
+                      href={lesson.deck.pdfHref}
+                      download
+                      className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-water-700 px-4 py-3 text-left text-sm font-semibold text-white hover:bg-water-900"
+                    >
+                      <span>{lesson.deck.title} PDF</span>
+                      <Download aria-hidden="true" size={16} />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
+                    >
+                      <span>{lesson.deck.title} PDF</span>
+                      <span className="text-xs">Coming soon</span>
+                    </button>
+                  )}
                   {lesson.downloads.map((download) =>
                     download.href ? (
                       <a

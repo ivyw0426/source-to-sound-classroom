@@ -11,6 +11,12 @@ export type DownloadLink = {
   href?: string;
 };
 
+export type LessonDeck = {
+  title: string;
+  pdfHref?: string;
+  slideImages: string[];
+};
+
 export type Lesson = {
   slug: string;
   title: string;
@@ -34,8 +40,17 @@ export type Lesson = {
   realWorldConnection: string;
   extensionIdeas: string[];
   downloads: DownloadLink[];
+  deck: LessonDeck;
   featured?: boolean;
 };
+
+function numberedSlideImages(folder: string, count: number, padded = false) {
+  return Array.from({ length: count }, (_, index) => {
+    const slideNumber = index + 1;
+    const fileNumber = padded ? String(slideNumber).padStart(2, "0") : String(slideNumber);
+    return `/lesson-slides/${folder}/slide-${fileNumber}.jpg`;
+  });
+}
 
 export const topicFilters = [
   "Stormwater",
@@ -112,6 +127,10 @@ export const lessons: Lesson[] = [
       { label: "StoryMap Planning Sheet" },
       { label: "Student Rubric" },
     ],
+    deck: {
+      title: "Watershed Investigators",
+      slideImages: [],
+    },
     featured: true,
   },
   {
@@ -177,6 +196,11 @@ export const lessons: Lesson[] = [
       { label: "Lab Data Sheet" },
       { label: "Slides" },
     ],
+    deck: {
+      title: "Creating an Ecocolumn",
+      pdfHref: "/lesson-pdfs/creating-an-ecocolumn.pdf",
+      slideImages: numberedSlideImages("filtration-lab", 15, true),
+    },
     featured: true,
   },
   {
@@ -241,6 +265,11 @@ export const lessons: Lesson[] = [
       { label: "Proposal Template" },
       { label: "Safety Checklist" },
     ],
+    deck: {
+      title: "Drain Detectives",
+      pdfHref: "/lesson-pdfs/drain-detectives.pdf",
+      slideImages: numberedSlideImages("drain-detectives", 7),
+    },
     featured: true,
   },
   {
@@ -305,6 +334,10 @@ export const lessons: Lesson[] = [
       { label: "Native Plant Research Sheet" },
       { label: "Presentation Rubric" },
     ],
+    deck: {
+      title: "School Rain Garden Design",
+      slideImages: [],
+    },
   },
   {
     slug: "after-the-rain-photo-documentary",
@@ -368,6 +401,10 @@ export const lessons: Lesson[] = [
       { label: "Photo Safety Guide" },
       { label: "Gallery Template" },
     ],
+    deck: {
+      title: "After the Rain Photo Documentary",
+      slideImages: [],
+    },
   },
 ];
 
