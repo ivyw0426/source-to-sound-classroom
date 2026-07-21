@@ -116,11 +116,11 @@ export const lessons: Lesson[] = [
   },
   {
     slug: "filtration-lab",
-    title: "The Filtration Lab",
+    title: "Create an Ecocolumn",
     shortDescription:
-      "Students build ecocolumns from recycled bottles to test how soil, gravel, compost, sand, and charcoal filter polluted water.",
+      "Students build ecocolumns from recycled bottles and household supplies to visualize how different ecosystems interact with each other, and how water travels through them.",
     summary:
-      "Students design, test, and revise bottle-based filtration systems. They compare how different natural materials change water clarity and discuss how rain gardens and healthy soils slow and clean runoff.",
+      "Students build ecocolumns from recycled bottles and household supplies to visualize how different ecosystems interact with each other, and how water travels through them.",
     imageSrc:
       "https://images.unsplash.com/photo-1581093458791-9d42cc0307f3?auto=format&fit=crop&w=1400&q=80",
     imageAlt:

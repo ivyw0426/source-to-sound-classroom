@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Clock, Coins, Layers3, Signal } from "lucide-react";
+import { ArrowRight, Clock, Layers3, Signal } from "lucide-react";
 import type { Lesson } from "@/lib/lessons";
 
 type LessonCardProps = {
@@ -52,11 +52,6 @@ export function LessonCard({ lesson }: LessonCardProps) {
             <Signal aria-hidden="true" size={16} className="text-forest-700" />
             <dt className="sr-only">Difficulty</dt>
             <dd>{lesson.difficulty}</dd>
-          </div>
-          <div className="flex items-center gap-2">
-            <Coins aria-hidden="true" size={16} className="text-forest-700" />
-            <dt className="sr-only">Materials cost</dt>
-            <dd>{lesson.materialsCost}</dd>
           </div>
         </dl>
         <div className="mt-5 flex items-center justify-between gap-3">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
-  AlertTriangle,
   ArrowLeft,
   CheckCircle2,
   ClipboardCheck,
@@ -9,14 +8,11 @@ import {
   Download,
   FileText,
   GraduationCap,
-  Lightbulb,
-  MapPinned,
   Package,
-  ShieldAlert,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
-import type { AriaAttributes, ComponentType, ReactNode } from "react";
+import type { AriaAttributes, ComponentType } from "react";
 import { LessonCard } from "@/components/LessonCard";
 import { getLessonBySlug, getRelatedLessons, lessons } from "@/lib/lessons";
 
@@ -120,139 +116,109 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               Lesson resources
             </p>
             <h2 className="mt-2 text-2xl font-bold text-slate-950">
-              Materials, prep, and classroom handouts
+              Lesson deck and downloads
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Everything needed for this lesson lives here, so the separate
-              teacher resources page is no longer required.
+              The full lesson slide deck will be posted here as a PDF.
             </p>
           </div>
-          <div className="mt-6 grid gap-5 lg:grid-cols-3">
-            <ResourcePanel icon={Package} title="Materials">
-              <BulletList items={lesson.materials} />
-            </ResourcePanel>
-            <ResourcePanel icon={FileText} title="Teacher prep">
-              <BulletList items={lesson.teacherPreparation} />
-            </ResourcePanel>
-            <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-              <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-md bg-water-50 text-water-700">
-                  <Download aria-hidden="true" size={21} />
+          <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.75fr)]">
+            <section className="flex min-h-[420px] flex-col rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-950">
+                    Lesson PPT PDF
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    PDF preview placeholder for the complete lesson slides.
+                  </p>
+                </div>
+                <span className="rounded-md bg-water-50 px-3 py-1.5 text-xs font-bold uppercase text-water-900">
+                  Coming soon
                 </span>
-                <h3 className="text-lg font-bold text-slate-950">
-                  Handouts and templates
-                </h3>
               </div>
-              <div className="mt-5 grid gap-3">
-                {lesson.downloads.map((download) =>
-                  download.href ? (
-                    <a
-                      key={download.label}
-                      href={download.href}
-                      className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-water-700 px-4 py-3 text-sm font-semibold text-white hover:bg-water-900"
-                    >
-                      {download.label}
-                      <Download aria-hidden="true" size={16} />
-                    </a>
-                  ) : (
-                    <button
-                      key={download.label}
-                      type="button"
-                      disabled
-                      className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
-                    >
-                      <span>{download.label}</span>
-                      <span className="text-xs">Coming soon</span>
-                    </button>
-                  ),
-                )}
+              <div className="mt-5 flex flex-1 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white">
+                <div className="px-6 text-center">
+                  <FileText
+                    aria-hidden="true"
+                    size={42}
+                    className="mx-auto text-water-700"
+                  />
+                  <p className="mt-4 text-sm font-semibold text-slate-700">
+                    Add the PDF file later and link it here.
+                  </p>
+                </div>
               </div>
+              <button
+                type="button"
+                disabled
+                className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-slate-200 px-4 py-3 text-sm font-semibold text-slate-500"
+              >
+                Download lesson PPT PDF
+                <span className="text-xs">Coming soon</span>
+              </button>
             </section>
+
+            <div className="grid gap-5">
+              <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-forest-50 text-forest-700">
+                    <CheckCircle2 aria-hidden="true" size={21} />
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950">
+                    Lesson objectives
+                  </h3>
+                </div>
+                <div className="mt-5">
+                  <BulletList items={lesson.learningObjectives} />
+                </div>
+              </section>
+
+              <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-water-50 text-water-700">
+                    <Download aria-hidden="true" size={21} />
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950">
+                    Handouts and templates
+                  </h3>
+                </div>
+                <div className="mt-5 grid gap-3">
+                  <button
+                    type="button"
+                    disabled
+                    className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
+                  >
+                    <span>Lesson PPT PDF</span>
+                    <span className="text-xs">Coming soon</span>
+                  </button>
+                  {lesson.downloads.map((download) =>
+                    download.href ? (
+                      <a
+                        key={download.label}
+                        href={download.href}
+                        className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-water-700 px-4 py-3 text-sm font-semibold text-white hover:bg-water-900"
+                      >
+                        {download.label}
+                        <Download aria-hidden="true" size={16} />
+                      </a>
+                    ) : (
+                      <button
+                        key={download.label}
+                        type="button"
+                        disabled
+                        className="inline-flex min-h-11 items-center justify-between gap-3 rounded-md bg-white px-4 py-3 text-left text-sm font-semibold text-slate-500 ring-1 ring-slate-200"
+                      >
+                        <span>{download.label}</span>
+                        <span className="text-xs">Coming soon</span>
+                      </button>
+                    ),
+                  )}
+                </div>
+              </section>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
-        <div className="grid gap-6">
-          <ContentBlock icon={CheckCircle2} title="Learning Objectives">
-            <BulletList items={lesson.learningObjectives} />
-          </ContentBlock>
-
-          <ContentBlock icon={ClipboardCheck} title="Step-by-Step Classroom Instructions">
-            <ol className="grid gap-3">
-              {lesson.instructions.map((step, index) => (
-                <li key={step} className="flex gap-3 text-sm leading-6 text-slate-700">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-water-700 text-xs font-bold text-white">
-                    {index + 1}
-                  </span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ol>
-          </ContentBlock>
-
-          <ContentBlock icon={GraduationCap} title="Student Deliverable">
-            <p className="text-sm leading-6 text-slate-700">
-              {lesson.studentDeliverable}
-            </p>
-          </ContentBlock>
-
-          <ContentBlock icon={Lightbulb} title="Assessment or Reflection Prompts">
-            <BulletList items={lesson.assessmentPrompts} />
-          </ContentBlock>
-
-          <ContentBlock icon={MapPinned} title="Real-World Connection">
-            <p className="text-sm leading-6 text-slate-700">
-              {lesson.realWorldConnection}
-            </p>
-          </ContentBlock>
-
-          <ContentBlock icon={Sparkles} title="Extension Ideas">
-            <BulletList items={lesson.extensionIdeas} />
-          </ContentBlock>
-        </div>
-
-        <aside className="grid content-start gap-5">
-          <section className="rounded-lg border border-amber-200 bg-amber-50 p-5">
-            <div className="flex items-center gap-2 text-amber-900">
-              <ShieldAlert aria-hidden="true" size={20} />
-              <h2 className="text-lg font-bold">Safety and privacy</h2>
-            </div>
-            <p className="mt-3 text-sm leading-6 text-amber-950">
-              Outdoor activities require adult supervision and school approval.
-              Students should not enter roads, private property, streams,
-              construction areas, or unsafe locations for fieldwork.
-            </p>
-          </section>
-
-          <section className="rounded-lg border border-slate-200 bg-white p-5">
-            <div className="flex items-center gap-2 text-slate-950">
-              <AlertTriangle aria-hidden="true" size={20} className="text-clay-500" />
-              <h2 className="text-lg font-bold">Teacher adaptation note</h2>
-            </div>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Lessons are educational resources and may need adaptation for
-              local standards, school policies, accessibility needs, weather,
-              and available supervision.
-            </p>
-          </section>
-
-          <section className="rounded-lg border border-water-100 bg-water-50 p-5">
-            <h2 className="text-lg font-bold text-water-900">
-              Online Bootcamp
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Students who want to go deeper can apply for the four-week online
-              environmental research bootcamp with adult registration.
-            </p>
-            <Link
-              href="/bootcamp"
-              className="focus-ring mt-4 inline-flex min-h-10 items-center justify-center rounded-md bg-water-700 px-4 py-2 text-sm font-semibold text-white hover:bg-water-900"
-            >
-              Explore Bootcamp
-            </Link>
-          </section>
-        </aside>
       </section>
 
       {relatedLessons.length > 0 ? (
@@ -294,50 +260,6 @@ function SnapshotRow({
       <dt className="min-w-24 font-semibold text-slate-950">{label}</dt>
       <dd>{value}</dd>
     </div>
-  );
-}
-
-function ContentBlock({
-  icon: Icon,
-  title,
-  children,
-}: {
-  icon: IconType;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-md bg-forest-50 text-forest-700">
-          <Icon aria-hidden="true" size={21} />
-        </span>
-        <h2 className="text-xl font-bold text-slate-950">{title}</h2>
-      </div>
-      <div className="mt-5">{children}</div>
-    </section>
-  );
-}
-
-function ResourcePanel({
-  icon: Icon,
-  title,
-  children,
-}: {
-  icon: IconType;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-      <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-md bg-forest-50 text-forest-700">
-          <Icon aria-hidden="true" size={21} />
-        </span>
-        <h3 className="text-lg font-bold text-slate-950">{title}</h3>
-      </div>
-      <div className="mt-5">{children}</div>
-    </section>
   );
 }
 
