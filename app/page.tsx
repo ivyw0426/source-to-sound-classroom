@@ -31,14 +31,14 @@ const homePathways = [
   {
     icon: Map,
     title: "Join the research bootcamp",
-    text: "Explore the online pathway for students who want to build mapping, writing, and research skills.",
+    text: "Explore the online pathway for students who want to build mapping skills using ArcGIS.",
     href: "/bootcamp",
     action: "Explore bootcamp",
   },
   {
     icon: HeartHandshake,
     title: "Partner with Source to Sound",
-    text: "Connect around classroom support, symposium work, volunteer help, or curriculum collaboration.",
+    text: "Bring Source to Sound into the classroom or connect through curriculum collaboration.",
     href: "/contact",
     action: "Contact us",
   },

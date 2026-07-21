@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 
 const founders = [
   {
-    name: "Founder Name",
-    role: "Founder",
-    initials: "ST",
+    name: "Shreya Santhosh",
+    role: "Co-Founder",
+    initials: "SS",
     bio: "Add a short founder bio here with environmental education experience, school background, and the story behind Source to Sound.",
   },
   {
-    name: "Founder Name",
+    name: "Ivy Wei",
     role: "Co-Founder",
-    initials: "SS",
+    initials: "IW",
     bio: "Use this space for another founder profile, including why watershed learning, salmon habitat, and student-led projects matter.",
   },
 ];
