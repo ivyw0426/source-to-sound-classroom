@@ -16,6 +16,8 @@ export type Lesson = {
   title: string;
   shortDescription: string;
   summary: string;
+  imageSrc: string;
+  imageAlt: string;
   gradeRange: string;
   duration: string;
   durationGroup: "1 class" | "2-3 classes" | "Multi-day project";
@@ -55,6 +57,10 @@ export const lessons: Lesson[] = [
       "Students use maps and public data to investigate how impervious surfaces affect local streams.",
     summary:
       "Students explore their local watershed using maps, photos, and public data. They identify patterns between land cover, runoff, and stream health, then publish a recommendation in an ArcGIS StoryMap.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "A green watershed valley with a river channel moving through the landscape",
     gradeRange: "Grades 6-8",
     duration: "4-6 class periods",
     durationGroup: "Multi-day project",
@@ -115,6 +121,10 @@ export const lessons: Lesson[] = [
       "Students build ecocolumns from recycled bottles to test how soil, gravel, compost, sand, and charcoal filter polluted water.",
     summary:
       "Students design, test, and revise bottle-based filtration systems. They compare how different natural materials change water clarity and discuss how rain gardens and healthy soils slow and clean runoff.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1581093458791-9d42cc0307f3?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Students working with science materials during a hands-on lab investigation",
     gradeRange: "Grades 6-8",
     duration: "2-3 class periods",
     durationGroup: "2-3 classes",
@@ -176,6 +186,10 @@ export const lessons: Lesson[] = [
       "Students map storm drains near school, document conditions, and create a stormwater infrastructure proposal.",
     summary:
       "Students conduct a supervised school-area storm drain survey. They document drain locations, nearby pollutant sources, and maintenance concerns, then propose a small infrastructure or awareness improvement.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Rainwater moving along a city street near stormwater infrastructure",
     gradeRange: "Grades 6-8",
     duration: "3-5 class periods",
     durationGroup: "Multi-day project",
@@ -236,6 +250,10 @@ export const lessons: Lesson[] = [
       "Students test soil infiltration, select native plants, and design a rain garden for a school downspout or parking lot edge.",
     summary:
       "Students investigate a real school runoff location and design a rain garden concept. The lesson blends infiltration testing, native plant research, scale drawing, and practical constraints.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Native plants and garden beds that can absorb and filter stormwater",
     gradeRange: "Grades 6-8",
     duration: "5-8 class periods",
     durationGroup: "Multi-day project",
@@ -295,6 +313,10 @@ export const lessons: Lesson[] = [
       "Students document stormwater evidence in their neighborhoods through photography and short written explanations.",
     summary:
       "Students use photography and concise captions to notice what happens after rain. They document puddles, runoff paths, erosion, drains, plants, and pollution indicators while following strict safety and privacy rules.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1501691223387-dd0500403074?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Raindrops and wet pavement after rainfall for a stormwater photo investigation",
     gradeRange: "Grades 6-8",
     duration: "1-2 class periods plus optional homework",
     durationGroup: "2-3 classes",

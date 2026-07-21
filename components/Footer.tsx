@@ -27,9 +27,6 @@ export function Footer() {
             <Link className="hover:text-water-900" href="/lessons">
               Lesson Library
             </Link>
-            <Link className="hover:text-water-900" href="/teacher-resources">
-              Teacher Resources
-            </Link>
             <Link className="hover:text-water-900" href="/student-showcase">
               Student Showcase
             </Link>

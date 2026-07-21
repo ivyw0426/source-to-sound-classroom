@@ -49,8 +49,8 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden bg-water-900">
         <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80"
-          alt="A green Pacific Northwest watershed landscape with water, trees, and open sky"
+          src="/images/source-to-sound-hero.png"
+          alt="A Puget Sound wetland with a winding waterway, forest, clouds, and open sky"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-water-900/65" />

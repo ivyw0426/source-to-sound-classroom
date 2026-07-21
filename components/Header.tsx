@@ -7,7 +7,6 @@ import { getCurrentUser } from "@/lib/supabase/server";
 const navItems = [
   { href: "/lessons", label: "Lessons" },
   { href: "/bootcamp", label: "Online Bootcamp", badge: true },
-  { href: "/teacher-resources", label: "Teacher Resources" },
   { href: "/student-showcase", label: "Student Showcase" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
