@@ -60,13 +60,10 @@ export default function HomePage() {
               Open-access grades 6-8 curriculum library
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-              Free hands-on watershed and stormwater lessons for middle school
-              classrooms.
+              Trace how water travels, carries pollution, and shapes ecosystems from your street to Puget Sound.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-water-50">
-              Source to Sound Classroom helps grades 6-8 teachers bring
-              environmental STEM to life through project-based lessons rooted in
-              Pacific Northwest watersheds.
+              We provide middle schoolers access to stormwater and watershed research through hands-on field projects, building a generation that understands where their water goes and why it matters.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/lessons">Browse Lessons</ButtonLink>
