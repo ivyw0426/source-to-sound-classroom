@@ -63,7 +63,7 @@ export default async function HomePage() {
               Open-access grades 6-8 curriculum library
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-              Trace how water travels, carries pollution, and shapes ecosystems from your street to Puget Sound.
+              Source to Sound
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-water-50">
               We provide middle schoolers access to stormwater and watershed research through hands-on field projects, building a generation that understands where their water goes and why it matters.

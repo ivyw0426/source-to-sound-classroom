@@ -14,14 +14,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Watershed ArcGIS StoryMap Bootcamp | Source to Sound",
+  title: "ArcGIS StoryMap Bootcamp | Source to Sound",
   description:
     "A five-lesson online bootcamp where students investigate a local environmental problem, build ArcGIS maps, create a StoryMap, draft a policy recommendation, and present at a symposium.",
   alternates: {
     canonical: "/bootcamp",
   },
   openGraph: {
-    title: "Watershed ArcGIS StoryMap Bootcamp | Source to Sound",
+    title: "ArcGIS StoryMap Bootcamp | Source to Sound",
     description:
       "A five-lesson online bootcamp where students investigate a local environmental problem, build ArcGIS maps, create a StoryMap, draft a policy recommendation, and present at a symposium.",
   },
@@ -151,7 +151,7 @@ export default function BootcampPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOccupationalProgram",
-    name: "Watershed ArcGIS StoryMap Bootcamp",
+    name: "ArcGIS StoryMap Bootcamp",
     provider: {
       "@type": "Organization",
       name: "Source to Sound Classroom",
@@ -186,7 +186,7 @@ export default function BootcampPage() {
               Online bootcamp
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-              Watershed ArcGIS StoryMap Bootcamp
+              ArcGIS StoryMap Bootcamp
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-water-50">
               Students investigate a real environmental problem in their local

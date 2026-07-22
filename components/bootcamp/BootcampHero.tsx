@@ -18,7 +18,7 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
           <h1
             className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal text-water-900 sm:text-6xl"
           >
-            Watershed ArcGIS StoryMap Bootcamp
+            ArcGIS StoryMap Bootcamp
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
             Students investigate a real environmental problem in their local
