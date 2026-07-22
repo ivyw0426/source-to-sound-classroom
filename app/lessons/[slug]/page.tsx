@@ -145,7 +145,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
 
               {lesson.lessonPlan.href ? (
                 <GatedDownload
-                  href={lesson.lessonPlan.href}
+                  href={isAuthenticated ? lesson.lessonPlan.href : ""}
                   label={lesson.lessonPlan.label}
                   isAuthenticated={isAuthenticated}
                   variant="card"
@@ -156,7 +156,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
 
               {lesson.deck.pdfHref ? (
                 <GatedDownload
-                  href={lesson.deck.pdfHref}
+                  href={isAuthenticated ? lesson.deck.pdfHref : ""}
                   label="Download slides"
                   isAuthenticated={isAuthenticated}
                   variant="button"
