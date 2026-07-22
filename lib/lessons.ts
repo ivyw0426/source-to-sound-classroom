@@ -135,7 +135,7 @@ export const lessons: Lesson[] = [
     },
     deck: {
       title: "Creating an Ecocolumn",
-      pdfHref: "/lesson-pdfs/creating-an-ecocolumn.pdf",
+      pdfHref: "/lesson-downloads/creating-an-ecocolumn.pdf",
       slideImages: numberedSlideImages("filtration-lab", 15, true),
     },
     featured: true,
@@ -211,7 +211,7 @@ export const lessons: Lesson[] = [
     },
     deck: {
       title: "Drain Detectives",
-      pdfHref: "/lesson-pdfs/drain-detectives.pdf",
+      pdfHref: "/lesson-downloads/drain-detectives.pdf",
       slideImages: numberedSlideImages("drain-detectives", 7),
     },
     featured: true,
@@ -294,7 +294,7 @@ export const lessons: Lesson[] = [
     },
     deck: {
       title: "After the Rain",
-      pdfHref: "/lesson-pdfs/after-the-rain.pdf",
+      pdfHref: "/lesson-downloads/after-the-rain.pdf",
       slideImages: numberedSlideImages("after-the-rain", 12, true),
     },
     featured: true,

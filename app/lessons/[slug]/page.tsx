@@ -5,24 +5,22 @@ import {
   CheckCircle2,
   ClipboardCheck,
   Clock,
-  Download,
-  FileText,
   GraduationCap,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import type { AriaAttributes, ComponentType } from "react";
+import { GatedDownload } from "@/components/GatedDownload";
 import { LessonCard } from "@/components/LessonCard";
 import { LessonSlideDeck } from "@/components/LessonSlideDeck";
 import { getLessonBySlug, getRelatedLessons, lessons } from "@/lib/lessons";
+import { getCurrentUser } from "@/lib/supabase/server";
 
 type LessonPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return lessons.map((lesson) => ({ slug: lesson.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -54,6 +52,8 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
     notFound();
   }
 
+  const user = await getCurrentUser();
+  const isAuthenticated = Boolean(user);
   const relatedLessons = getRelatedLessons(lesson.slug);
 
   return (
@@ -144,39 +144,24 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               </section>
 
               {lesson.lessonPlan.href ? (
-                <a
+                <GatedDownload
                   href={lesson.lessonPlan.href}
-                  download
-                  className="focus-ring group flex items-center gap-3 rounded-lg border border-water-100 bg-white p-4 text-left shadow-sm transition hover:border-water-300 hover:bg-water-50"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-water-50 text-water-700 group-hover:bg-white">
-                    <FileText aria-hidden="true" size={21} />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-sm font-bold text-slate-950">
-                      Lesson plan
-                    </span>
-                    <span className="mt-1 block text-sm leading-5 text-slate-600">
-                      {lesson.lessonPlan.label}
-                    </span>
-                  </span>
-                  <Download
-                    aria-hidden="true"
-                    size={17}
-                    className="ml-auto shrink-0 text-water-700"
-                  />
-                </a>
+                  label={lesson.lessonPlan.label}
+                  isAuthenticated={isAuthenticated}
+                  variant="card"
+                  eyebrow="Lesson plan"
+                  description="Lesson plans are available to registered Source to Sound users."
+                />
               ) : null}
 
               {lesson.deck.pdfHref ? (
-                <a
+                <GatedDownload
                   href={lesson.deck.pdfHref}
-                  download
-                  className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-water-900"
-                >
-                  Download slides
-                  <Download aria-hidden="true" size={16} />
-                </a>
+                  label="Download slides"
+                  isAuthenticated={isAuthenticated}
+                  variant="button"
+                  description="Slide downloads are available to registered Source to Sound users."
+                />
               ) : (
                 <button
                   type="button"
