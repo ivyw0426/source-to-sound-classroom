@@ -6,8 +6,8 @@ import {
   ClipboardCheck,
   Clock,
   Download,
+  FileText,
   GraduationCap,
-  Package,
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
@@ -102,7 +102,6 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                 <SnapshotRow icon={Clock} label="Duration" value={lesson.duration} />
                 <SnapshotRow icon={Sparkles} label="Difficulty" value={lesson.difficulty} />
                 <SnapshotRow icon={ClipboardCheck} label="Activity" value={lesson.activityType} />
-                <SnapshotRow icon={Package} label="Materials cost" value={lesson.materialsCost} />
               </dl>
             </aside>
           </div>
@@ -119,7 +118,8 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               Lesson deck and downloads
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              View the lesson slides below or download the PDF when available.
+              View the lesson slides below, open the lesson plan, or download
+              the slides PDF.
             </p>
           </div>
           <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.75fr)]">
@@ -143,13 +143,38 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                 </div>
               </section>
 
+              {lesson.lessonPlan.href ? (
+                <a
+                  href={lesson.lessonPlan.href}
+                  download
+                  className="focus-ring group flex items-center gap-3 rounded-lg border border-water-100 bg-white p-4 text-left shadow-sm transition hover:border-water-300 hover:bg-water-50"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-water-50 text-water-700 group-hover:bg-white">
+                    <FileText aria-hidden="true" size={21} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-bold text-slate-950">
+                      Lesson plan
+                    </span>
+                    <span className="mt-1 block text-sm leading-5 text-slate-600">
+                      {lesson.lessonPlan.label}
+                    </span>
+                  </span>
+                  <Download
+                    aria-hidden="true"
+                    size={17}
+                    className="ml-auto shrink-0 text-water-700"
+                  />
+                </a>
+              ) : null}
+
               {lesson.deck.pdfHref ? (
                 <a
                   href={lesson.deck.pdfHref}
                   download
                   className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-water-900"
                 >
-                  Download {lesson.deck.title} PDF
+                  Download slides
                   <Download aria-hidden="true" size={16} />
                 </a>
               ) : (

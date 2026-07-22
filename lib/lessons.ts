@@ -1,6 +1,5 @@
 export type Difficulty = "Beginner" | "Intermediate" | "Advanced";
 export type ActivityType =
-  | "Mapping"
   | "Lab Investigation"
   | "Field Investigation"
   | "Engineering Design"
@@ -40,6 +39,7 @@ export type Lesson = {
   realWorldConnection: string;
   extensionIdeas: string[];
   downloads: DownloadLink[];
+  lessonPlan: DownloadLink;
   deck: LessonDeck;
   featured?: boolean;
 };
@@ -54,148 +54,85 @@ function numberedSlideImages(folder: string, count: number, padded = false) {
 
 export const topicFilters = [
   "Stormwater",
-  "Watersheds",
-  "Salmon",
   "Water Quality",
   "Engineering",
-  "GIS",
   "Field Investigation",
-  "Rain Gardens",
-  "Photography",
+  "Low Impact Development",
 ];
 
 export const lessons: Lesson[] = [
   {
-    slug: "watershed-investigators",
-    title: "Watershed Investigators",
-    shortDescription:
-      "Students use maps and public data to investigate how impervious surfaces affect local streams.",
-    summary:
-      "Students explore their local watershed using maps, photos, and public data. They identify patterns between land cover, runoff, and stream health, then publish a recommendation in an ArcGIS StoryMap.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80",
-    imageAlt:
-      "A green watershed valley with a river channel moving through the landscape",
-    gradeRange: "Grades 6-8",
-    duration: "4-6 class periods",
-    durationGroup: "Multi-day project",
-    difficulty: "Intermediate",
-    activityType: "Mapping",
-    materialsCost: "Free-$20",
-    topics: ["Watersheds", "Stormwater", "GIS", "Water Quality"],
-    learningObjectives: [
-      "Define watershed boundaries and describe how water moves through a local landscape.",
-      "Use map layers or public data to identify impervious surfaces near streams.",
-      "Explain how land use can affect runoff, water quality, and salmon habitat.",
-      "Create a clear evidence-based recommendation for a school or community audience.",
-    ],
-    materials: [
-      "Computers or tablets with internet access",
-      "ArcGIS StoryMaps or slide deck alternative",
-      "Local watershed map or municipal stormwater map",
-      "Optional: schoolyard photos or neighborhood observations",
-    ],
-    teacherPreparation: [
-      "Choose one local stream, creek, or drainage basin students can investigate.",
-      "Preview public data sources and prepare links for students.",
-      "Create a simple StoryMap template or provide a slide-based backup option.",
-    ],
-    instructions: [
-      "Introduce watersheds and impervious surfaces with a local map.",
-      "Have students mark school, stream, road, roof, and parking lot locations.",
-      "Guide teams through gathering evidence from maps, photos, and observations.",
-      "Students analyze where runoff may move quickly and where pollutants may collect.",
-      "Teams build a StoryMap with maps, captions, evidence, and a recommendation.",
-      "Host a gallery walk where students compare findings and refine recommendations.",
-    ],
-    studentDeliverable:
-      "An ArcGIS StoryMap or slide-based map story with evidence, analysis, and one practical recommendation.",
-    assessmentPrompts: [
-      "What evidence best supports your runoff concern?",
-      "How does your recommendation reduce risk to water quality or habitat?",
-      "What additional data would make your conclusion stronger?",
-    ],
-    realWorldConnection:
-      "City planners, watershed groups, and transportation teams use this same map-based reasoning to prioritize green infrastructure and protect local streams.",
-    extensionIdeas: [
-      "Invite a city stormwater staff member to review student recommendations.",
-      "Compare two neighborhoods with different levels of tree canopy or pavement.",
-      "Add a salmon habitat layer or culvert barrier data where available.",
-    ],
-    downloads: [
-      { label: "Teacher Guide PDF" },
-      { label: "StoryMap Planning Sheet" },
-      { label: "Student Rubric" },
-    ],
-    deck: {
-      title: "Watershed Investigators",
-      slideImages: [],
-    },
-    featured: true,
-  },
-  {
     slug: "filtration-lab",
     title: "Create an Ecocolumn",
     shortDescription:
-      "Students build ecocolumns from recycled bottles and household supplies to visualize how different ecosystems interact with each other, and how water travels through them.",
+      "Students build ecocolumns from stacked 2-liter bottles to model how water filters through different materials before reaching a stream.",
     summary:
-      "Students build ecocolumns from recycled bottles and household supplies to visualize how different ecosystems interact with each other, and how water travels through them.",
+      "Students build ecocolumns from stacked 2-liter bottles with aquatic, decomposition, and terrestrial chambers. They test water and soil conditions, observe how water moves through the system, and connect the model to how soil and roots in rain gardens filter runoff.",
     imageSrc:
       "https://images.unsplash.com/photo-1581093458791-9d42cc0307f3?auto=format&fit=crop&w=1400&q=80",
     imageAlt:
       "Students working with science materials during a hands-on lab investigation",
     gradeRange: "Grades 6-8",
-    duration: "2-3 class periods",
+    duration: "About 3 class periods",
     durationGroup: "2-3 classes",
-    difficulty: "Beginner",
+    difficulty: "Intermediate",
     activityType: "Lab Investigation",
-    materialsCost: "$20-$60 per class",
+    materialsCost: "Under $15 per team",
     topics: ["Water Quality", "Engineering", "Stormwater"],
     learningObjectives: [
-      "Build a model that demonstrates filtration and runoff treatment.",
-      "Compare how different materials affect water clarity and flow rate.",
-      "Use data to support a claim about effective filtration design.",
-      "Connect lab results to rain gardens, soils, and green infrastructure.",
+      "Build an ecocolumn from stacked 2-liter bottles that includes aquatic, decomposition, and terrestrial chambers.",
+      "Model how water filters, or fails to filter, through different materials before reaching a stream.",
+      "Measure water and soil indicators such as pH, nitrate/nitrite, aquarium test-strip readings, and dissolved oxygen.",
+      "Use observations and test results to compare how ecocolumn chambers interact.",
+      "Connect ecocolumn filtration to how rain garden soil and roots reduce stormwater impacts.",
     ],
     materials: [
-      "Clean recycled plastic bottles",
-      "Coffee filters or mesh",
-      "Sand, gravel, compost, soil, and optional activated charcoal",
-      "Turbid test water made with soil and leaf bits",
-      "Clear cups, timers, measuring cups, and observation sheets",
+      "3 empty 2-liter bottles",
+      "2 cups gravel",
+      "1 piece cheese cloth",
+      "2 cups compost/soil",
+      "Compost materials such as seeds, banana peels, and eggshells",
+      "Mixed grass seeds",
+      "1 aquatic plant, such as elodea",
+      "Treated water",
+      "Utility knife and scissors",
     ],
     teacherPreparation: [
-      "Pre-cut bottles if needed for safety and time.",
-      "Prepare a consistent sample of cloudy test water.",
-      "Set expectations that filtered water is not safe to drink.",
+      "Prepare or supervise bottle cutting for the aquatic, connector, decomposition, and terrestrial chambers.",
+      "Prepare bottle caps with holes for cheesecloth drainage wicks.",
+      "Set safety expectations for utility knives, scissors, water testing, and cleanup.",
+      "Gather test strips, test tubes, color charts, and any dissolved oxygen equipment before testing.",
     ],
     instructions: [
-      "Introduce the design question: which material layers best filter runoff?",
-      "Teams sketch a filtration column and predict its performance.",
-      "Students build columns using agreed safety procedures.",
-      "Teams pour equal amounts of test water and record flow time and clarity.",
-      "Students compare results, revise one design variable, and retest.",
-      "Close with a discussion connecting results to rain gardens and soil layers.",
+      "Create the aquatic chamber from the bottom half of a 2-liter bottle and add gravel, treated water, and an aquatic plant.",
+      "Create a connector section from the middle of a second bottle and secure it above the aquatic chamber.",
+      "Install a cheesecloth drainage wick through a prepared bottle cap so water can move downward while soil stays in place.",
+      "Build and stack the decomposition chamber, then build the terrestrial chamber with potting soil and grass seeds.",
+      "Add a saved bottle-bottom piece as the top cover.",
+      "Collect soil and water samples, then test pH, nitrate/nitrite, aquarium water indicators, and dissolved oxygen as directed in the plan.",
+      "Record quantitative and qualitative data for each location and test date.",
     ],
     studentDeliverable:
-      "A lab sheet with design diagram, observations, data table, claim, evidence, and reasoning.",
+      "A completed ecocolumn with quantitative and qualitative data tables comparing chamber conditions and water-quality results.",
     assessmentPrompts: [
-      "Which layer seemed most important in your design and why?",
-      "What tradeoff did you notice between filtering speed and clarity?",
-      "How is your model similar to and different from a real rain garden?",
+      "How did water move through the different chambers of your ecocolumn?",
+      "Which test results best show whether your ecocolumn is filtering water effectively?",
+      "How does your model help explain why rain garden soil and roots matter?",
     ],
     realWorldConnection:
-      "Green infrastructure uses soil, roots, compost, and stone layers to slow runoff and filter pollutants before water reaches streams.",
+      "Rain gardens work because soil and roots slow and filter runoff. The ecocolumn makes that process visible at a material level.",
     extensionIdeas: [
-      "Measure pH or conductivity before and after filtration.",
-      "Test plant roots or leaf litter as an added design variable.",
-      "Connect the model to a school rain garden proposal.",
+      "Compare data across teams to identify the best-performing ecocolumn designs.",
+      "Change one layer or material and retest water-quality indicators.",
+      "Use the model to explain how green infrastructure protects streams.",
     ],
     downloads: [
-      { label: "Teacher Guide PDF" },
-      { label: "Lab Data Sheet" },
-      { label: "Slides" },
+      { label: "Lesson Plan PDF", href: "/lesson-plans/creating-an-ecocolumn-plan.pdf" },
     ],
+    lessonPlan: {
+      label: "Create an Ecocolumn Lesson Plan",
+      href: "/lesson-plans/creating-an-ecocolumn-plan.pdf",
+    },
     deck: {
       title: "Creating an Ecocolumn",
       pdfHref: "/lesson-pdfs/creating-an-ecocolumn.pdf",
@@ -207,64 +144,71 @@ export const lessons: Lesson[] = [
     slug: "drain-detectives",
     title: "Drain Detectives",
     shortDescription:
-      "Students map storm drains near school, document conditions, and create a stormwater infrastructure proposal.",
+      "Students investigate storm drains around their school, document conditions and nearby filtration features, and build a class map.",
     summary:
-      "Students conduct a supervised school-area storm drain survey. They document drain locations, nearby pollutant sources, and maintenance concerns, then propose a small infrastructure or awareness improvement.",
+      "Students investigate storm drains around their school, document each drain's condition and nearby filtration features, identify the waterway it might connect to, and combine their findings into a class map.",
     imageSrc:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
     imageAlt:
       "Rainwater moving along a city street near stormwater infrastructure",
     gradeRange: "Grades 6-8",
-    duration: "3-5 class periods",
-    durationGroup: "Multi-day project",
-    difficulty: "Intermediate",
+    duration: "1-2 class periods",
+    durationGroup: "2-3 classes",
+    difficulty: "Beginner",
     activityType: "Field Investigation",
-    materialsCost: "Free-$30",
-    topics: ["Stormwater", "Field Investigation", "Engineering", "Water Quality"],
+    materialsCost: "Materials listed in lesson plan",
+    topics: ["Stormwater", "Field Investigation", "Low Impact Development", "Water Quality"],
     learningObjectives: [
-      "Identify stormwater infrastructure around a school or neighborhood.",
-      "Collect field observations safely using a simple protocol.",
-      "Prioritize locations where runoff pollution risk may be higher.",
-      "Communicate an infrastructure or outreach proposal to an authentic audience.",
+      "Explain what a storm drain is and how it differs from a household drain.",
+      "Explain how stormwater runoff can carry pollution directly into lakes, rivers, and streams.",
+      "Identify four Low Impact Development features: rain gardens, bioswales, permeable pavement, and native plant strips.",
+      "Collect and record observations about storm drains around the school.",
+      "Use collected evidence to identify a drain that should be prioritized for improvement.",
     ],
     materials: [
-      "Printed school-area map or shared digital map",
-      "Clipboards, pencils, safety vests, and adult chaperones",
-      "Camera or teacher-approved classroom device",
-      "Storm drain survey sheet",
+      "1 large printed map of the school and surrounding area",
+      "Green and red pins, stickers, or markers",
+      "1 student recording sheet or notebook per team",
+      "1-2 pencils or pens per team",
+      "Phone, tablet, or camera for photographs",
     ],
     teacherPreparation: [
-      "Get school approval for outdoor fieldwork and define a safe survey boundary.",
-      "Review rules: students do not enter roads, private property, streams, or unsafe areas.",
-      "Plan adult supervision and an indoor map-based option for poor weather.",
+      "Prepare a large printed map of the school and surrounding area.",
+      "Define safe survey areas before students go outside.",
+      "Prepare a model entry and tools students can use to locate nearby bodies of water.",
+      "Review the seven pieces of information students collect for each drain.",
     ],
     instructions: [
-      "Discuss where storm drains send runoff and why drain conditions matter.",
-      "Review the survey route, roles, and safety expectations.",
-      "Teams document visible drains, nearby litter, leaves, slopes, and pavement.",
-      "Students return indoors and mark high-risk locations on a class map.",
-      "Teams select one location and draft a proposal such as drain marking, leaf cleanup, signage, or a rain garden study.",
-      "Students present proposals with evidence from the survey.",
+      "Present slides 1-4 to introduce storm drains and provide context for the activity.",
+      "On the Your Task slide, explain that students will locate drains around the school and determine whether filtration systems are present.",
+      "Review the seven pieces of information students collect for every drain: drain number, location, connected waterway, condition, LID feature, estimated distance to nearest water, and photograph.",
+      "Provide one model entry before students go outside and show tools for locating bodies of water.",
+      "Bring students back inside and build a class map using the large printed school map.",
+      "Have teams add their drains one at a time and design the map according to the Building the Class Map slide.",
+      "Use the completed map to discuss total drains, unfiltered drains, drains with LID features, areas with the most unfiltered drains, and possible improvements or policy recommendations.",
     ],
     studentDeliverable:
-      "A mapped storm drain survey and a one-page proposal for a school or community improvement.",
+      "A class storm-drain map and completed data sheet documenting drain location, condition, LID features, nearest water, and photos.",
     assessmentPrompts: [
-      "Which location should be addressed first and what evidence supports that choice?",
-      "What safety rule mattered most during fieldwork?",
-      "Who would need to approve or maintain your proposed solution?",
+      "How many drains did the class find in total?",
+      "How many drains are unfiltered, and how many have Low Impact Development features?",
+      "Which streets or areas have the highest concentration of unfiltered drains?",
+      "What specific improvement or policy should be recommended?",
     ],
     realWorldConnection:
-      "Public works teams inspect drains, prioritize maintenance, and use community reports to reduce flooding and pollution.",
+      "Storm drain observations help communities understand where runoff may carry pollution directly into lakes, rivers, and streams.",
     extensionIdeas: [
-      "Submit appropriate non-student data to a local adopt-a-drain or stormwater program.",
-      "Create bilingual storm drain awareness posters.",
-      "Compare observations before and after a heavy rain.",
+      "Compare drains with and without LID features on the class map.",
+      "Identify patterns in where unfiltered drains are concentrated.",
+      "Draft a recommendation for one drain or area that should be prioritized for improvement.",
     ],
     downloads: [
-      { label: "Field Survey Sheet" },
-      { label: "Proposal Template" },
-      { label: "Safety Checklist" },
+      { label: "Lesson Plan PDF", href: "/lesson-plans/drain-detectives-plan.pdf" },
     ],
+    lessonPlan: {
+      label: "Drain Detectives Lesson Plan",
+      href: "/lesson-plans/drain-detectives-plan.pdf",
+    },
     deck: {
       title: "Drain Detectives",
       pdfHref: "/lesson-pdfs/drain-detectives.pdf",
@@ -273,138 +217,87 @@ export const lessons: Lesson[] = [
     featured: true,
   },
   {
-    slug: "school-rain-garden-design",
-    title: "School Rain Garden Design",
+    slug: "after-the-rain",
+    title: "After the Rain",
     shortDescription:
-      "Students test soil infiltration, select native plants, and design a rain garden for a school downspout or parking lot edge.",
+      "Students monitor school surfaces over six weeks to compare how pavement, lawn, and planted garden beds respond to rainfall.",
     summary:
-      "Students investigate a real school runoff location and design a rain garden concept. The lesson blends infiltration testing, native plant research, scale drawing, and practical constraints.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80",
-    imageAlt:
-      "Native plants and garden beds that can absorb and filter stormwater",
-    gradeRange: "Grades 6-8",
-    duration: "5-8 class periods",
-    durationGroup: "Multi-day project",
-    difficulty: "Advanced",
-    activityType: "Engineering Design",
-    materialsCost: "$30-$100",
-    topics: ["Rain Gardens", "Engineering", "Stormwater", "Salmon"],
-    learningObjectives: [
-      "Explain how rain gardens slow, absorb, and filter stormwater runoff.",
-      "Conduct a basic soil infiltration test using a consistent method.",
-      "Select native plants based on site conditions and habitat value.",
-      "Create a design proposal that considers location, maintenance, and safety.",
-    ],
-    materials: [
-      "Measuring tape, stakes or cones, and infiltration test materials",
-      "Soil texture reference and native plant list",
-      "Graph paper or digital design tool",
-      "School site map or downspout photo",
-    ],
-    teacherPreparation: [
-      "Identify one potential school site for design only; installation requires separate approval.",
-      "Coordinate any outdoor testing with facilities staff.",
-      "Prepare a short native plant reference list suited to local conditions.",
-    ],
-    instructions: [
-      "Introduce rain gardens as a green infrastructure strategy.",
-      "Students inspect a candidate site and note runoff source, slope, sunlight, and constraints.",
-      "Teams conduct or review an infiltration test.",
-      "Students choose native plants and explain their design choices.",
-      "Teams create a scaled rain garden concept with labels and maintenance notes.",
-      "Students present designs to peers or a school facilities audience.",
-    ],
-    studentDeliverable:
-      "A labeled rain garden design proposal with site evidence, plant choices, and maintenance considerations.",
-    assessmentPrompts: [
-      "How does your design manage water during a storm?",
-      "Which constraint most shaped your design?",
-      "How could your rain garden support insects, birds, or salmon habitat downstream?",
-    ],
-    realWorldConnection:
-      "Landscape architects, engineers, and conservation districts design rain gardens to reduce runoff volumes and improve watershed health.",
-    extensionIdeas: [
-      "Build a small planter-box rain garden model.",
-      "Invite a native plant expert for design feedback.",
-      "Estimate project budget and create a grant-style pitch.",
-    ],
-    downloads: [
-      { label: "Design Brief" },
-      { label: "Native Plant Research Sheet" },
-      { label: "Presentation Rubric" },
-    ],
-    deck: {
-      title: "School Rain Garden Design",
-      slideImages: [],
-    },
-  },
-  {
-    slug: "after-the-rain-photo-documentary",
-    title: "After the Rain Photo Documentary",
-    shortDescription:
-      "Students document stormwater evidence in their neighborhoods through photography and short written explanations.",
-    summary:
-      "Students use photography and concise captions to notice what happens after rain. They document puddles, runoff paths, erosion, drains, plants, and pollution indicators while following strict safety and privacy rules.",
+      "Students investigate how different ground surfaces around their school correspond to rainfall and influence stormwater runoff. Over six weeks, teams monitor an impervious surface, a maintained lawn, and a planted garden bed, then use shared class data to compare runoff and water quality.",
     imageSrc:
       "https://images.unsplash.com/photo-1501691223387-dd0500403074?auto=format&fit=crop&w=1400&q=80",
     imageAlt:
-      "Raindrops and wet pavement after rainfall for a stormwater photo investigation",
+      "Raindrops and wet pavement after rainfall for a stormwater investigation",
     gradeRange: "Grades 6-8",
-    duration: "1-2 class periods plus optional homework",
-    durationGroup: "2-3 classes",
-    difficulty: "Beginner",
-    activityType: "Photography",
-    materialsCost: "Free",
-    topics: ["Photography", "Stormwater", "Watersheds", "Field Investigation"],
+    duration: "Six-week monitoring project",
+    durationGroup: "Multi-day project",
+    difficulty: "Intermediate",
+    activityType: "Field Investigation",
+    materialsCost: "Materials listed in lesson plan",
+    topics: ["Stormwater", "Water Quality", "Field Investigation"],
     learningObjectives: [
-      "Identify visible evidence of stormwater movement after rain.",
-      "Use photos and captions to explain an environmental observation.",
-      "Connect everyday places to larger watershed systems.",
-      "Practice privacy-aware and safety-focused documentation.",
+      "Explain surface permeability and distinguish between infiltration and surface runoff.",
+      "Explain why pavement produces more runoff than soil or vegetation.",
+      "Describe how stormwater runoff collects pollutants from roads, parking lots, and maintained landscapes.",
+      "Define turbidity and explain what high and low turbidity indicate.",
+      "Develop a research question, hypothesis, and presentation based on findings.",
     ],
     materials: [
-      "Teacher-approved camera device or printed image alternative",
-      "Photo caption worksheet",
-      "Classroom projector or gallery wall",
-      "Safety and privacy guidelines",
+      "1 student data sheet or notebook per team",
+      "1-2 pencils or pens per team",
+      "1 soil moisture meter",
+      "1 cardstock runoff frame at least 3 feet long",
+      "Measuring container with 500 mL of water",
+      "Timer or stopwatch",
+      "Container for collecting runoff water",
+      "Turbidity tube with Secchi disk pattern",
+      "Soil or water test tube for pH testing",
+      "pH test strips",
+      "pH color chart or test-strip bottle",
+      "Phone, tablet, or camera for photographs",
     ],
     teacherPreparation: [
-      "Decide whether photos are taken on campus, at home with guardian guidance, or from teacher-provided images.",
-      "Remind students not to photograph identifiable people, license plates, private property details, or unsafe locations.",
-      "Prepare a submission method that does not collect student personal information publicly.",
+      "Select monitoring stations for an impervious surface, a maintained lawn, and a planted garden bed.",
+      "Prepare a shared class spreadsheet where students can enter one row for each station after each visit.",
+      "Gather soil-moisture, runoff, turbidity, pH, timing, and photography materials.",
+      "Review safe fieldwork procedures and assign team roles for measurement, timing, recording, and photography.",
     ],
     instructions: [
-      "Model how to read a stormwater photo for evidence.",
-      "Students capture or select 3-5 images that show runoff, pooling, drains, plants, erosion, or pollution clues.",
-      "Students write concise captions explaining what each image shows.",
-      "Teams sort photos into categories and discuss patterns.",
-      "Students choose one image and write a recommendation or question for further investigation.",
-      "Optional: create a class gallery only after school and guardian permissions are confirmed.",
+      "Present slides 1-8 as guided by the slide instructions.",
+      "Introduce the research project on slide 9.",
+      "Use slide 10 to set up three monitoring stations: impervious surface, maintained lawn, and planted garden bed.",
+      "During each weekly field visit, record date, time, group number, station number, recent weather or rainfall, soil moisture, runoff or absorption time, turbidity, pH, and observations.",
+      "After each visit, students enter one row for each station into the shared class spreadsheet.",
+      "After the final field visit, each group reviews the class data and forms a research question.",
+      "Each group creates a final presentation with a research question and hypothesis, findings, conclusion, and recommendation.",
     ],
     studentDeliverable:
-      "A short photo documentary with captions, one pattern statement, and one action idea or investigation question.",
+      "A final presentation with a research question and hypothesis, findings, conclusion, and a specific actionable recommendation to reduce stormwater runoff.",
     assessmentPrompts: [
-      "What stormwater evidence is visible in your strongest photo?",
-      "What can a photo show well, and what data would still be missing?",
-      "How did you follow safety and privacy expectations?",
+      "Which surface handled water most effectively?",
+      "Which surface produced the greatest runoff?",
+      "What does the class data suggest about surface type, location, time, and weather conditions?",
+      "What specific action could the school or local government take to reduce stormwater runoff?",
     ],
     realWorldConnection:
-      "Community scientists and environmental educators use photo documentation to identify drainage problems, track seasonal changes, and tell watershed stories.",
+      "Monitoring runoff, turbidity, and pH helps students connect school surfaces to stormwater pollution and water-quality decisions.",
     extensionIdeas: [
-      "Pair photos with a hand-drawn runoff map.",
-      "Create a before-and-after rain comparison.",
-      "Use selected approved photos in a future student showcase.",
+      "Compare results after different rainfall conditions.",
+      "Use photographs to support the final presentation findings.",
+      "Continue monitoring the same stations across seasons.",
     ],
     downloads: [
-      { label: "Caption Worksheet" },
-      { label: "Photo Safety Guide" },
-      { label: "Gallery Template" },
+      { label: "Lesson Plan PDF", href: "/lesson-plans/after-the-rain-plan.pdf" },
     ],
-    deck: {
-      title: "After the Rain Photo Documentary",
-      slideImages: [],
+    lessonPlan: {
+      label: "After the Rain Lesson Plan",
+      href: "/lesson-plans/after-the-rain-plan.pdf",
     },
+    deck: {
+      title: "After the Rain",
+      pdfHref: "/lesson-pdfs/after-the-rain.pdf",
+      slideImages: numberedSlideImages("after-the-rain", 12, true),
+    },
+    featured: true,
   },
 ];
 

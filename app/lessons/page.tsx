@@ -6,11 +6,11 @@ import { lessons } from "@/lib/lessons";
 export const metadata: Metadata = {
   title: "Lesson Library",
   description:
-    "Search and filter free environmental STEM lessons for grades 6-8 by stormwater, watersheds, salmon, water quality, GIS, engineering, rain gardens, and more.",
+    "Search and filter free environmental STEM lessons for grades 6-8 by stormwater, water quality, field investigation, engineering, and low impact development.",
   openGraph: {
     title: "Lesson Library | Source to Sound Classroom",
     description:
-      "Search and filter free middle school environmental STEM lessons by topic, duration, difficulty, and activity type.",
+      "Search and filter free middle school environmental STEM lessons by stormwater, water quality, field investigation, engineering, and low impact development.",
   },
 };
 
@@ -22,7 +22,8 @@ export default function LessonsPage() {
         title="Find the right watershed project for your next unit"
       >
         Search classroom-ready lessons by topic, time, difficulty, or activity
-        type. Every lesson is free for teachers and designed for grades 6-8.
+        type. Current lessons include After the Rain, Drain Detectives, and
+        Create an Ecocolumn.
       </SectionHeading>
       <div className="mt-10">
         <LessonLibrary lessons={lessons} />

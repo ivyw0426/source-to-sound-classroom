@@ -16,11 +16,8 @@ const difficultyOptions: Array<"Any difficulty" | Difficulty> = [
 ];
 const activityOptions: Array<"Any activity" | ActivityType> = [
   "Any activity",
-  "Mapping",
   "Lab Investigation",
   "Field Investigation",
-  "Engineering Design",
-  "Photography",
 ];
 
 type LessonLibraryProps = {
@@ -110,7 +107,7 @@ export function LessonLibrary({ lessons }: LessonLibraryProps) {
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="Try runoff, salmon, StoryMap..."
+                placeholder="Try runoff, drains, ecocolumn..."
                 className="w-full border-0 bg-transparent text-sm outline-none placeholder:text-slate-400"
               />
             </span>
