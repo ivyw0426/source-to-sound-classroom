@@ -54,13 +54,262 @@ function numberedSlideImages(folder: string, count: number, padded = false) {
 
 export const topicFilters = [
   "Stormwater",
+  "Runoff",
   "Water Quality",
+  "Pollution",
+  "Water Filtration",
   "Engineering",
   "Field Investigation",
+  "Stream Habitat",
   "Low Impact Development",
 ];
 
 export const lessons: Lesson[] = [
+  {
+    slug: "water-filtration-challenge",
+    title: "Clean the Water Filtration Challenge",
+    shortDescription:
+      "Students design and test bottle filters to learn how layered materials can remove particles from polluted stormwater.",
+    summary:
+      "Students explore how stormwater runoff carries pollutants from roads and parking lots into salmon streams without filtration. Teams design, build, test, and compare model water filters using pebbles, gravel, sand, cotton balls, and coffee filters, then connect their results to real-world filtration systems such as rain gardens and water treatment plants.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Students testing water with clear containers during a hands-on filtration challenge",
+    gradeRange: "Grades 2-5",
+    duration: "45 minutes to 1 hour",
+    durationGroup: "1 class",
+    difficulty: "Beginner",
+    activityType: "Engineering Design",
+    materialsCost: "Low-cost classroom supplies",
+    topics: ["Water Filtration", "Water Quality", "Engineering", "Stormwater"],
+    learningObjectives: [
+      "Explain what stormwater runoff is and where it goes after it leaves a road or parking lot.",
+      "Describe how filtration removes particles from water using layered materials.",
+      "Design and build a water filter and evaluate its performance against other designs.",
+      "Connect the filtration challenge to real-world infrastructure like water treatment plants and rain gardens.",
+    ],
+    materials: [
+      "1 plastic water bottle per team",
+      "1/2 cup pebbles per team",
+      "1/2 cup gravel per team",
+      "1/2 cup sand per team",
+      "6 cotton balls per team",
+      "2 coffee filter sheets per team",
+      "Prepared dirty water with soil, sand, food coloring, and crushed leaves",
+    ],
+    teacherPreparation: [
+      "Cut all bottles in advance so students can use the top half as the filter and the bottom half as the collection chamber.",
+      "Prepare dirty water the night before so sediment is fully mixed in.",
+      "Pre-label team stations with numbers.",
+      "Set out filter materials at each station before students arrive.",
+    ],
+    instructions: [
+      "Introduce stormwater runoff and explain that runoff can carry pollutants from roads and parking lots into salmon streams.",
+      "Give teams 15 minutes to design and build their filters using the available materials.",
+      "Have students place the bottle top upside down into the bottle bottom so the neck points downward.",
+      "Students choose materials and decide the order of layers inside the top half of the bottle.",
+      "Remind teams to pack materials firmly enough that water moves through the filter instead of around the edges.",
+      "Pour identical measured amounts of dirty water into each filter and give teams 5 minutes to collect filtered water.",
+      "Judge the designs based on clarity of filtered water, speed of filtration, and final volume of water produced.",
+      "Lead a class discussion about which materials worked best, why layers matter, and how the model connects to real stormwater systems.",
+    ],
+    studentDeliverable:
+      "A completed bottle filter, observations from the filtration test, and a redesign explanation based on water clarity, filtration speed, and collected volume.",
+    assessmentPrompts: [
+      "Which material do you think did the most work in your filter, and why?",
+      "What would have happened if you only used one material instead of layers?",
+      "If you could redesign your filter right now, what would you change?",
+      "Where does water from a school parking lot go when it rains, and is anything cleaning it before it reaches a stream?",
+    ],
+    realWorldConnection:
+      "The challenge models how layered materials can trap particles before water reaches streams, helping students understand rain gardens, water treatment plants, and other filtration systems.",
+    extensionIdeas: [
+      "Let teams redesign and retest filters after comparing results.",
+      "Add a class data table to compare clarity, speed, and water volume across teams.",
+      "Connect the best-performing filter layers to rain garden soil layers or water treatment processes.",
+    ],
+    downloads: [
+      {
+        label: "Lesson Plan PDF",
+        href: "/lesson-plans/water-filtration-challenge-plan.pdf",
+      },
+    ],
+    lessonPlan: {
+      label: "Clean the Water Filtration Challenge Lesson Plan",
+      href: "/lesson-plans/water-filtration-challenge-plan.pdf",
+    },
+    deck: {
+      title: "Clean the Water Filtration Challenge",
+      pdfHref: "/lesson-downloads/water-filtration-challenge.pdf",
+      slideImages: numberedSlideImages("water-filtration-challenge", 8),
+    },
+    featured: true,
+  },
+  {
+    slug: "save-the-stream",
+    title: "Save the Stream!",
+    shortDescription:
+      "Students rescue a model stream by identifying and removing simulated pollution while protecting fish, plants, rocks, and other habitat features.",
+    summary:
+      "Students investigate how pollution left on the ground can be carried into streams through a simulated stream-rescue activity. Teams examine a model stream with toy fish, plants, rocks, and simulated pollution, then use tongs and sorting cups to remove only the pollution and classify what they found.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1467487218904-61198e97a0c4?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "A small forest stream surrounded by rocks and green plants",
+    gradeRange: "Kindergarten-Grade 2",
+    duration: "35-45 minutes",
+    durationGroup: "1 class",
+    difficulty: "Beginner",
+    activityType: "Lab Investigation",
+    materialsCost: "Low-cost classroom supplies",
+    topics: ["Pollution", "Stream Habitat", "Water Quality"],
+    learningObjectives: [
+      "Identify common materials that may pollute streams.",
+      "Explain that pollution on streets, lawns, and sidewalks can become water pollution.",
+      "Recognize several different types of water pollution.",
+      "Carefully remove pollution from a model stream and sort it into simple categories.",
+    ],
+    materials: [
+      "1 shallow tray, plastic container, or aluminum pan per team",
+      "Blue paper, blue plastic, or water to create a stream",
+      "3-5 toy fish or laminated fish pictures",
+      "Small plants, twigs, leaves, and small rocks",
+      "1-2 tongs or large tweezers per team",
+      "1 small spoon per team",
+      "4 sorting cups or bowls per team",
+      "Student observation sheet",
+      "Paper scraps, bottle caps, yarn or string, foil pieces, soil or cocoa powder, and optional cooking oil",
+      "Pencils",
+    ],
+    teacherPreparation: [
+      "Place blue paper, blue plastic, or a shallow layer of water in each tray to create a model stream.",
+      "Add toy fish, plants, rocks, and twigs to create a stream habitat.",
+      "Place simulated pollution throughout the stream and along streambanks.",
+      "Prepare tongs, spoons, or nets for students to use at stations.",
+      "Prepare one model stream for each team.",
+    ],
+    instructions: [
+      "Show students the model streams before they begin.",
+      "Ask students to identify the animals and plants in the habitat.",
+      "Introduce the cleanup tools and have students take turns removing one pollution item at a time.",
+      "After removing an item, students identify what type of pollution it represents and place it in the correct sorting container.",
+      "Students remove only the pollution and leave fish, plants, rocks, and other naturally occurring stream materials.",
+      "After streams have been cleared, discuss how each type of pollution may affect stream habitats and what students found.",
+    ],
+    studentDeliverable:
+      "A completed observation sheet showing pollution students found, one item they removed, and one way they can help keep streams clean.",
+    assessmentPrompts: [
+      "Which items did not belong in the stream?",
+      "What kind of pollution did your team find?",
+      "How could pollution on a sidewalk or lawn end up in a stream?",
+      "What is one thing you can do to help keep streams clean?",
+    ],
+    realWorldConnection:
+      "The model stream helps young students see that trash, sediment, oil, and other pollution left on land can become water pollution when rain carries it into streams.",
+    extensionIdeas: [
+      "Have students create a simple poster showing what belongs and does not belong in a stream.",
+      "Sort pollution into plastic and trash, paper, soil and yard waste, and special pollution categories.",
+      "Add new simulated materials and ask students to decide what type of pollution each one represents.",
+    ],
+    downloads: [
+      { label: "Lesson Plan PDF", href: "/lesson-plans/save-the-stream-plan.pdf" },
+    ],
+    lessonPlan: {
+      label: "Save the Stream! Lesson Plan",
+      href: "/lesson-plans/save-the-stream-plan.pdf",
+    },
+    deck: {
+      title: "Save the Stream!",
+      pdfHref: "/lesson-downloads/save-the-stream.pdf",
+      slideImages: numberedSlideImages("save-the-stream", 8),
+    },
+  },
+  {
+    slug: "raindrop-racers",
+    title: "Raindrop Racers",
+    shortDescription:
+      "Students race water across different surface ramps to compare which surfaces absorb water and which create fast-moving runoff.",
+    summary:
+      "Students investigate how quickly rainwater moves across different ground surfaces by building simulated surface ramps. Teams test foil or plastic, bare soil, grass or moss, gravel, and sponge surfaces, then compare which surfaces create runoff and which absorb or slow water.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503435824048-a799a3a84bf7?auto=format&fit=crop&w=1400&q=80",
+    imageAlt:
+      "Rain drops on a green leaf during a runoff and absorption investigation",
+    gradeRange: "Kindergarten-Grade 2",
+    duration: "35-45 minutes",
+    durationGroup: "1 class",
+    difficulty: "Beginner",
+    activityType: "Lab Investigation",
+    materialsCost: "Low-cost classroom supplies",
+    topics: ["Runoff", "Stormwater", "Water Quality"],
+    learningObjectives: [
+      "Observe that water moves differently across different surfaces.",
+      "Identify which surface absorbs water the fastest and which creates runoff.",
+      "Make predictions and compare hypotheses with results.",
+      "Use vocabulary including absorb, runoff, and impervious surface.",
+    ],
+    materials: [
+      "5 shallow trays, baking sheets, or plastic lids",
+      "Aluminum foil or plastic sheet for one tray",
+      "2-3 cups soil",
+      "Grass, sod, moss, or artificial grass for one tray",
+      "2 cups gravel or small rocks",
+      "Sponge pieces or one sponge",
+      "5 small books or blocks to create matching slopes",
+      "About 3 cups water",
+      "2-3 drops blue food coloring",
+      "1 measuring cup or tablespoon",
+      "5 water cups",
+      "5 collection cups",
+      "Student observation sheet",
+      "Pencils",
+    ],
+    teacherPreparation: [
+      "Cover each tray with one surface material.",
+      "Raise one end of each tray using a book or block, keeping each tray at approximately the same angle.",
+      "Place a collection cup beneath the lower end of each tray.",
+      "Mix a few drops of blue food coloring into the water.",
+      "Measure the same amount of water into cups for every test tray.",
+    ],
+    instructions: [
+      "Show students the five test surfaces and ask where they have seen each surface in real life.",
+      "Have students predict which surface will have the fastest raindrop, which will soak up the most water, and which will soak up the least water.",
+      "Students record predictions on their handout.",
+      "For each tray, students pour the measured water at the marked starting point near the top of the ramp.",
+      "Students observe whether the water moves fast, medium, or slow.",
+      "Students compare how much water reached the bottom collection cup.",
+      "Students order the surface types from fastest to slowest and from least to most water absorbed.",
+      "Discuss which raindrop won the race, which surface held the most water, which surface produced the most runoff, and which surface might be best near a stream.",
+    ],
+    studentDeliverable:
+      "A completed observation sheet with predictions, surface test results, and comparisons of runoff speed and water absorption.",
+    assessmentPrompts: [
+      "Which surface had the fastest raindrop?",
+      "Which surface held the most water?",
+      "Which surface produced the most runoff?",
+      "Which surface might be best near a stream, and why?",
+    ],
+    realWorldConnection:
+      "Students connect everyday surfaces such as pavement, soil, grass, gravel, and wetlands to runoff speed, absorption, and stream protection.",
+    extensionIdeas: [
+      "Repeat the test using the same amount of water but a different ramp angle.",
+      "Ask students to design a schoolyard surface that would slow and absorb rainwater.",
+      "Compare the sponge model to wetlands or planted areas that hold water during rainstorms.",
+    ],
+    downloads: [
+      { label: "Lesson Plan PDF", href: "/lesson-plans/raindrop-racers-plan.pdf" },
+    ],
+    lessonPlan: {
+      label: "Raindrop Racers Lesson Plan",
+      href: "/lesson-plans/raindrop-racers-plan.pdf",
+    },
+    deck: {
+      title: "Raindrop Racers",
+      pdfHref: "/lesson-downloads/raindrop-racers.pdf",
+      slideImages: numberedSlideImages("raindrop-racers", 8),
+    },
+  },
   {
     slug: "filtration-lab",
     title: "Create an Ecocolumn",
