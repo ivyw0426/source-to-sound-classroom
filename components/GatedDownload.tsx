@@ -38,7 +38,7 @@ export function GatedDownload({
       >
         {variant === "card" ? (
           <>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-water-50 text-water-700 group-hover:bg-white">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-water-50 text-water-700 group-hover:bg-white">
               <FileText aria-hidden="true" size={21} />
             </span>
             <span className="min-w-0">
@@ -74,7 +74,7 @@ export function GatedDownload({
       >
         {variant === "card" ? (
           <>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-water-50 text-water-700 group-hover:bg-white">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-water-50 text-water-700 group-hover:bg-white">
               <FileText aria-hidden="true" size={21} />
             </span>
             <span className="min-w-0">
@@ -106,16 +106,16 @@ export function GatedDownload({
           aria-labelledby="download-lock-title"
           className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 px-4 py-6"
         >
-          <div className="relative w-full max-w-md rounded-lg bg-white p-6 shadow-soft">
+          <div className="relative w-full max-w-md rounded-[2rem] bg-white p-6 shadow-soft">
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="focus-ring absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                className="focus-ring absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-slate-900"
             >
               <X aria-hidden="true" size={18} />
             </button>
-            <div className="flex h-12 w-12 items-center justify-center rounded-md bg-water-50 text-water-700">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-water-50 text-water-700">
               <LockKeyhole aria-hidden="true" size={24} />
             </div>
             <h2
@@ -143,7 +143,7 @@ export function GatedDownload({
               Already have an account?{" "}
               <Link
                 href={loginHref}
-                className="font-semibold text-water-800 hover:text-water-950"
+                className="font-bold text-water-800 hover:text-water-950"
               >
                 Log in
               </Link>
@@ -159,8 +159,8 @@ function getClassName(variant: "card" | "button") {
   return cn(
     "focus-ring",
     variant === "card" &&
-      "group flex w-full items-center gap-3 rounded-lg border border-water-100 bg-white p-4 text-left shadow-sm transition hover:border-water-300 hover:bg-water-50",
+      "group flex w-full items-center gap-3 rounded-[1.5rem] border border-water-100 bg-white p-4 text-left shadow-sm transition hover:border-water-300 hover:bg-water-50",
     variant === "button" &&
-      "inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-water-900",
+      "inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-water-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-water-900",
   );
 }

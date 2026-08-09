@@ -72,8 +72,7 @@ export const lessons: Lesson[] = [
       "Students design and test bottle filters to learn how layered materials can remove particles from polluted stormwater.",
     summary:
       "Students explore how stormwater runoff carries pollutants from roads and parking lots into salmon streams without filtration. Teams design, build, test, and compare model water filters using pebbles, gravel, sand, cotton balls, and coffee filters, then connect their results to real-world filtration systems such as rain gardens and water treatment plants.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/water-filtration-challenge.png",
     imageAlt:
       "Students testing water with clear containers during a hands-on filtration challenge",
     gradeRange: "Grades 2-5",
@@ -153,8 +152,7 @@ export const lessons: Lesson[] = [
       "Students rescue a model stream by identifying and removing simulated pollution while protecting fish, plants, rocks, and other habitat features.",
     summary:
       "Students investigate how pollution left on the ground can be carried into streams through a simulated stream-rescue activity. Teams examine a model stream with toy fish, plants, rocks, and simulated pollution, then use tongs and sorting cups to remove only the pollution and classify what they found.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1467487218904-61198e97a0c4?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/save-the-stream.png",
     imageAlt:
       "A small forest stream surrounded by rocks and green plants",
     gradeRange: "Kindergarten-Grade 2",
@@ -232,8 +230,7 @@ export const lessons: Lesson[] = [
       "Students race water across different surface ramps to compare which surfaces absorb water and which create fast-moving runoff.",
     summary:
       "Students investigate how quickly rainwater moves across different ground surfaces by building simulated surface ramps. Teams test foil or plastic, bare soil, grass or moss, gravel, and sponge surfaces, then compare which surfaces create runoff and which absorb or slow water.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1503435824048-a799a3a84bf7?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/raindrop-racers.png",
     imageAlt:
       "Rain drops on a green leaf during a runoff and absorption investigation",
     gradeRange: "Kindergarten-Grade 2",
@@ -317,11 +314,10 @@ export const lessons: Lesson[] = [
       "Students build ecocolumns from stacked 2-liter bottles to model how water filters through different materials before reaching a stream.",
     summary:
       "Students build ecocolumns from stacked 2-liter bottles with aquatic, decomposition, and terrestrial chambers. They test water and soil conditions, observe how water moves through the system, and connect the model to how soil and roots in rain gardens filter runoff.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1581093458791-9d42cc0307f3?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/filtration-lab.png",
     imageAlt:
       "Students working with science materials during a hands-on lab investigation",
-    gradeRange: "Grades 6-8",
+    gradeRange: "Grades K-8",
     duration: "About 3 class periods",
     durationGroup: "2-3 classes",
     difficulty: "Intermediate",
@@ -396,11 +392,10 @@ export const lessons: Lesson[] = [
       "Students investigate storm drains around their school, document conditions and nearby filtration features, and build a class map.",
     summary:
       "Students investigate storm drains around their school, document each drain's condition and nearby filtration features, identify the waterway it might connect to, and combine their findings into a class map.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/drain-detectives.png",
     imageAlt:
       "Rainwater moving along a city street near stormwater infrastructure",
-    gradeRange: "Grades 6-8",
+    gradeRange: "Grades K-8",
     duration: "1-2 class periods",
     durationGroup: "2-3 classes",
     difficulty: "Beginner",
@@ -472,11 +467,10 @@ export const lessons: Lesson[] = [
       "Students monitor school surfaces over six weeks to compare how pavement, lawn, and planted garden beds respond to rainfall.",
     summary:
       "Students investigate how different ground surfaces around their school correspond to rainfall and influence stormwater runoff. Over six weeks, teams monitor an impervious surface, a maintained lawn, and a planted garden bed, then use shared class data to compare runoff and water quality.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1501691223387-dd0500403074?auto=format&fit=crop&w=1400&q=80",
+    imageSrc: "/lesson-thumbnails/after-the-rain.png",
     imageAlt:
       "Raindrops and wet pavement after rainfall for a stormwater investigation",
-    gradeRange: "Grades 6-8",
+    gradeRange: "Grades K-8",
     duration: "Six-week monitoring project",
     durationGroup: "Multi-day project",
     difficulty: "Intermediate",

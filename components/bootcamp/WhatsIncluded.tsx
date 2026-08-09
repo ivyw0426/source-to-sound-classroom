@@ -8,13 +8,13 @@ export function WhatsIncluded() {
           <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
             Program materials
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">
+          <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-slate-950 sm:text-4xl">
             What&apos;s Included
           </h2>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {includedItems.map((item) => (
-            <article key={item.title} className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+            <article key={item.title} className="rounded-[2rem] border border-forest-100 bg-[#fbfcf4] p-5">
               <item.icon aria-hidden="true" size={24} className="text-forest-700" />
               <h3 className="mt-4 text-base font-bold text-slate-950">
                 {item.title}
@@ -29,3 +29,4 @@ export function WhatsIncluded() {
     </section>
   );
 }
+

@@ -9,13 +9,13 @@ export function UserMenu({ user }: { user: User | null }) {
       <div className="hidden items-center gap-2 lg:flex">
         <Link
           href="/login"
-          className="focus-ring rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+          className="focus-ring rounded-full px-4 py-2 text-sm font-bold text-water-900 hover:bg-water-50"
         >
           Log In
         </Link>
         <Link
           href="/signup"
-          className="focus-ring rounded-md bg-water-700 px-4 py-2 text-sm font-semibold text-white hover:bg-water-900"
+          className="focus-ring rounded-full bg-water-700 px-5 py-2 text-sm font-bold text-white hover:bg-water-900"
         >
           Create Account
         </Link>
@@ -27,7 +27,7 @@ export function UserMenu({ user }: { user: User | null }) {
     <div className="hidden items-center gap-2 lg:flex">
       <Link
         href="/account"
-        className="focus-ring inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+        className="focus-ring inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-water-900 hover:bg-water-50"
       >
         <UserCircle aria-hidden="true" size={16} />
         My Account
@@ -35,7 +35,7 @@ export function UserMenu({ user }: { user: User | null }) {
       <form action={logoutAction}>
         <button
           type="submit"
-          className="focus-ring inline-flex items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-200"
+          className="focus-ring inline-flex items-center gap-2 rounded-full bg-forest-50 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-forest-100"
         >
           <LogOut aria-hidden="true" size={16} />
           Log Out

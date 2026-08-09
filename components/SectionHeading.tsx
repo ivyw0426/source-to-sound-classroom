@@ -14,7 +14,7 @@ export function SectionHeading({ eyebrow, title, children }: SectionHeadingProps
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">
+      <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-water-900 sm:text-5xl">
         {title}
       </h2>
       {children ? (

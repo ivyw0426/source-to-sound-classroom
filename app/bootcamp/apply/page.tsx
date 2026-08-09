@@ -60,7 +60,7 @@ export default async function BootcampApplyPage() {
         />
         <aside className="grid content-start gap-5">
           <ConsentNotice />
-          <div className="rounded-lg border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-600">
+          <div className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 text-sm leading-6 text-slate-600">
             <h2 className="text-lg font-bold text-slate-950">
               Already submitted?
             </h2>
@@ -84,8 +84,8 @@ export default async function BootcampApplyPage() {
 function AuthSetupMissing() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="rounded-lg border border-amber-200 bg-amber-50 p-6 text-amber-950">
-        <h1 className="text-3xl font-bold">Supabase setup required</h1>
+      <div className="rounded-[2rem] border border-amber-200 bg-amber-50 p-6 text-amber-950">
+        <h1 className="font-display text-4xl font-bold">Supabase setup required</h1>
         <p className="mt-3 text-sm leading-6">
           Add Supabase environment variables before accepting bootcamp
           applications. Public lesson pages still work without accounts.
@@ -94,3 +94,4 @@ function AuthSetupMissing() {
     </section>
   );
 }
+

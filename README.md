@@ -1,6 +1,6 @@
 # Source to Sound Classroom
 
-Open-access environmental STEM lesson library and online bootcamp MVP for grades 6-8.
+Open-access environmental STEM lesson library and online bootcamp MVP for K-8.
 
 ## Run Locally
 

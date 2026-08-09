@@ -55,10 +55,10 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+      className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm sm:p-6"
     >
       {submitted ? (
-        <div className="mb-5 rounded-lg border border-forest-100 bg-forest-50 p-4 text-sm leading-6 text-forest-900">
+        <div className="mb-5 rounded-[1.5rem] border border-forest-100 bg-forest-50 p-4 text-sm leading-6 text-forest-900">
           <div className="flex items-center gap-2 font-bold">
             <CheckCircle2 aria-hidden="true" size={18} />
             Message ready
@@ -97,7 +97,7 @@ export function ContactForm() {
           {partnershipOptions.map((option) => (
             <label
               key={option}
-              className="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-medium text-slate-700"
+              className="flex items-center gap-3 rounded-full border border-forest-100 bg-[#fbfcf4] px-4 py-3 text-sm font-medium text-slate-700"
             >
               <input
                 type="checkbox"
@@ -120,7 +120,7 @@ export function ContactForm() {
           rows={6}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
-          className="focus-ring mt-2 w-full rounded-md border border-slate-300 px-3 py-3 text-sm text-slate-800"
+          className="focus-ring mt-2 w-full rounded-[1.5rem] border border-forest-100 bg-[#fbfcf4] px-4 py-3 text-sm text-slate-800"
           placeholder="Tell us what kind of support or partnership you are interested in."
           required
         />
@@ -131,7 +131,7 @@ export function ContactForm() {
         ) : null}
       </label>
 
-      <p className="mt-5 rounded-md bg-slate-50 p-3 text-xs leading-5 text-slate-600">
+      <p className="mt-5 rounded-[1.25rem] bg-forest-50 p-4 text-xs leading-5 text-slate-600">
         Privacy note: this form is for adult teachers, administrators,
         volunteers, and partners. Do not submit student names, student photos, or
         student contact information.
@@ -139,7 +139,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-water-900 sm:w-auto"
+        className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-water-700 px-6 py-3 text-sm font-bold text-white transition hover:bg-water-900 sm:w-auto"
       >
         Send Message
         <Send aria-hidden="true" size={16} />
@@ -174,7 +174,7 @@ function TextField({
         required={required}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className="focus-ring mt-2 h-11 w-full rounded-md border border-slate-300 px-3 text-sm text-slate-800"
+        className="focus-ring mt-2 h-11 w-full rounded-full border border-forest-100 bg-[#fbfcf4] px-4 text-sm text-slate-800"
       />
       {error ? (
         <span id={errorId} className="mt-1 block text-sm font-medium text-clay-500">

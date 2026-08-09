@@ -54,7 +54,7 @@ export default async function AccountPage() {
         </p>
       </div>
       <div className="mt-8 grid gap-8 lg:grid-cols-[360px_1fr]">
-        <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <section className="rounded-[2rem] border border-forest-100 bg-white/90 p-6 shadow-sm">
           <h2 className="text-xl font-bold text-slate-950">Profile</h2>
           <form action={updateProfileFormAction} className="mt-5 grid gap-4">
             <label className="block">
@@ -65,7 +65,7 @@ export default async function AccountPage() {
                 name="fullName"
                 defaultValue={profile?.full_name || ""}
                 required
-                className="focus-ring mt-2 h-11 w-full rounded-md border border-slate-300 px-3 text-sm text-slate-800"
+                className="focus-ring mt-2 h-11 w-full rounded-full border border-forest-100 px-3 text-sm text-slate-800"
               />
             </label>
             <label className="block">
@@ -73,7 +73,7 @@ export default async function AccountPage() {
               <input
                 value={user.email || profile?.email || ""}
                 readOnly
-                className="mt-2 h-11 w-full rounded-md border border-slate-200 bg-slate-50 px-3 text-sm text-slate-600"
+                className="mt-2 h-11 w-full rounded-full border border-forest-100 bg-[#fbfcf4] px-3 text-sm text-slate-600"
               />
             </label>
             <label className="block">
@@ -82,7 +82,7 @@ export default async function AccountPage() {
                 name="role"
                 defaultValue={profile?.role || ""}
                 required
-                className="focus-ring mt-2 h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800"
+                className="focus-ring mt-2 h-11 w-full rounded-full border border-forest-100 bg-white px-3 text-sm text-slate-800"
               >
                 <option value="">Select your role</option>
                 {adultRoles.map((role) => (
@@ -94,7 +94,7 @@ export default async function AccountPage() {
             </label>
             <button
               type="submit"
-              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white hover:bg-water-900"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-full bg-water-700 px-5 py-3 text-sm font-semibold text-white hover:bg-water-900"
             >
               Update Profile
             </button>
@@ -109,8 +109,8 @@ export default async function AccountPage() {
 function SetupMissing() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="rounded-lg border border-amber-200 bg-amber-50 p-6 text-amber-950">
-        <h1 className="text-3xl font-bold">Account setup required</h1>
+      <div className="rounded-[2rem] border border-amber-200 bg-amber-50 p-6 text-amber-950">
+        <h1 className="font-display text-4xl font-bold">Account setup required</h1>
         <p className="mt-3 text-sm leading-6">
           Supabase environment variables are needed before accounts can be used.
           See the README and `.env.example` for setup.
@@ -119,3 +119,4 @@ function SetupMissing() {
     </section>
   );
 }
+

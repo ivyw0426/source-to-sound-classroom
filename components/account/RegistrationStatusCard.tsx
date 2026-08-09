@@ -9,7 +9,7 @@ export function RegistrationStatusCard({
 }) {
   if (!registration) {
     return (
-      <section className="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center">
+      <section className="rounded-[2rem] border border-dashed border-forest-100 bg-white/90 p-6 text-center">
         <h2 className="text-xl font-bold text-slate-950">
           You have not registered for a bootcamp yet.
         </h2>
@@ -19,7 +19,7 @@ export function RegistrationStatusCard({
         </p>
         <Link
           href="/bootcamp"
-          className="focus-ring mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white hover:bg-water-900"
+          className="focus-ring mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-water-700 px-5 py-3 text-sm font-semibold text-white hover:bg-water-900"
         >
           Explore the Online Bootcamp
         </Link>
@@ -28,7 +28,7 @@ export function RegistrationStatusCard({
   }
 
   return (
-    <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+    <section className="rounded-[2rem] border border-forest-100 bg-white/90 p-6 shadow-sm">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-xl font-bold text-slate-950">
@@ -66,7 +66,7 @@ export function RegistrationStatusCard({
       {registration.status === "Submitted" ? (
         <Link
           href="/bootcamp/apply"
-          className="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-200"
+          className="focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-200"
         >
           Edit submitted application
         </Link>
@@ -74,3 +74,4 @@ export function RegistrationStatusCard({
     </section>
   );
 }
+

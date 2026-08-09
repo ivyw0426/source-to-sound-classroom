@@ -11,7 +11,7 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
         <div>
           <p
-            className="inline-flex rounded-md bg-white px-4 py-2 text-sm font-bold text-water-900 shadow-sm ring-1 ring-water-100"
+            className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold text-water-900 shadow-sm ring-1 ring-water-100"
           >
             Five-Lesson Online Bootcamp
           </p>
@@ -34,14 +34,14 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/bootcamp/apply"
-              className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-water-900"
+              className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-water-700 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-water-900"
             >
               Apply for a Class Slot
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
             <Link
               href="/bootcamp#lesson-plan"
-              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-water-900 ring-1 ring-water-100 hover:bg-water-50"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-water-900 ring-1 ring-water-100 hover:bg-water-50"
             >
               See Lesson Plan
             </Link>
@@ -51,10 +51,10 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
             {adultConsentNotice}
           </p>
         </div>
-        <div className="grid gap-4 rounded-[28px] bg-white p-5 shadow-soft ring-1 ring-water-100">
+        <div className="grid gap-4 rounded-[28px] bg-white/90 p-5 shadow-soft ring-1 ring-water-100">
           <div className="rounded-[24px] bg-water-900 p-6 text-white">
             <div className="flex items-center justify-between gap-3">
-              <span className="rounded-md bg-white/15 px-3 py-1 text-sm font-bold">
+              <span className="rounded-full bg-white/15 px-3 py-1 text-sm font-bold">
                 Live Online
               </span>
               <Sparkles aria-hidden="true" className="text-sun-100" />
@@ -65,7 +65,7 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
             {["Question", "Maps", "StoryMap"].map((label) => (
-              <div key={label} className="rounded-2xl bg-slate-50 p-4">
+              <div key={label} className="rounded-2xl bg-[#fbfcf4] p-4">
                 <MapPin aria-hidden="true" size={18} className="text-forest-700" />
                 <p className="mt-3 text-lg font-bold text-slate-950">
                   {label}
@@ -78,3 +78,4 @@ export function BootcampHero({ compact = false }: { compact?: boolean }) {
     </section>
   );
 }
+

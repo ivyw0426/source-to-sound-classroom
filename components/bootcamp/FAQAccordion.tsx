@@ -13,10 +13,10 @@ export function FAQAccordion() {
         <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
           FAQ
         </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950">
+        <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-slate-950">
           Common bootcamp questions
         </h2>
-        <div className="mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200">
+        <div className="mt-8 divide-y divide-slate-200 rounded-[2rem] border border-forest-100">
           {bootcampFaqs.map((faq) => {
             const isOpen = openQuestion === faq.question;
             return (
@@ -47,3 +47,4 @@ export function FAQAccordion() {
     </section>
   );
 }
+

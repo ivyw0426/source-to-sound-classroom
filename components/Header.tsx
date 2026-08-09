@@ -7,7 +7,7 @@ import { getCurrentUser } from "@/lib/supabase/server";
 const navItems = [
   { href: "/lessons", label: "Lessons" },
   { href: "/bootcamp", label: "Online Bootcamp", badge: true },
-  { href: "/student-showcase", label: "Student Showcase" },
+  { href: "/initiatives", label: "Initiatives" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -16,21 +16,21 @@ export async function Header() {
   const user = await getCurrentUser();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-forest-100 bg-[#fbfcf4]/95 backdrop-blur">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
       >
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-md">
-          <span className="flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white">
+          <span className="flex h-12 w-12 items-center justify-center rounded-[48%_52%_44%_56%/58%_42%_58%_42%] bg-forest-50 text-water-900 ring-1 ring-forest-100">
             <Leaf aria-hidden="true" size={21} />
           </span>
           <span className="leading-tight">
-            <span className="block text-base font-bold text-water-900">
+            <span className="block font-display text-xl font-bold leading-5 text-water-900">
               Source to Sound
             </span>
-            <span className="block text-xs font-semibold uppercase tracking-wide text-forest-700">
-              Classroom
+            <span className="block text-[11px] font-semibold lowercase tracking-normal text-forest-700">
+              explore. learn. protect.
             </span>
           </span>
         </Link>
@@ -39,7 +39,7 @@ export async function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-water-50 hover:text-water-900"
+              className="focus-ring group rounded-full px-4 py-2 text-sm font-bold text-slate-700 hover:text-water-900"
             >
               {item.label}
               {item.badge ? (
@@ -52,12 +52,12 @@ export async function Header() {
         </div>
         <UserMenu user={user} />
       </nav>
-      <div className="flex gap-1 overflow-x-auto border-t border-slate-100 px-4 py-2 md:hidden">
+      <div className="flex flex-wrap justify-center gap-2 border-t border-forest-100 px-4 py-3 md:hidden">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-water-50"
+            className="focus-ring rounded-full px-3 py-2 text-sm font-bold text-slate-700 hover:bg-water-50"
           >
             {item.label}
           </Link>
@@ -66,14 +66,14 @@ export async function Header() {
           <>
             <Link
               href="/account"
-              className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+              className="focus-ring rounded-full px-3 py-2 text-sm font-bold text-water-900 hover:bg-water-50"
             >
               My Account
             </Link>
             <form action={logoutAction}>
               <button
                 type="submit"
-                className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                className="focus-ring rounded-full px-3 py-2 text-sm font-bold text-slate-700 hover:bg-forest-50"
               >
                 Log Out
               </button>
@@ -83,13 +83,13 @@ export async function Header() {
           <>
             <Link
               href="/login"
-              className="focus-ring shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-water-900 hover:bg-water-50"
+              className="focus-ring rounded-full px-3 py-2 text-sm font-bold text-water-900 hover:bg-water-50"
             >
               Log In
             </Link>
             <Link
               href="/signup"
-              className="focus-ring shrink-0 rounded-md bg-water-700 px-3 py-2 text-sm font-semibold text-white"
+              className="focus-ring rounded-full bg-water-700 px-4 py-2 text-sm font-bold text-white"
             >
               Create Account
             </Link>

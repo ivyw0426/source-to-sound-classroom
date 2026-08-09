@@ -8,13 +8,13 @@ export function BootcampTimeline() {
           <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
             Four-week structure
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">
+          <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-slate-950 sm:text-4xl">
             From local question to symposium presentation
           </h2>
         </div>
         <div className="mt-10 grid gap-5 lg:grid-cols-4">
           {bootcampWeeks.map((week) => (
-            <article key={week.week} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <article key={week.week} className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm">
               <div className="flex items-center justify-between gap-3">
                 <span className="rounded-full bg-water-50 px-3 py-1 text-xs font-bold text-water-900">
                   {week.week}
@@ -29,7 +29,7 @@ export function BootcampTimeline() {
               </p>
               <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700">
                 {week.points.map((point) => (
-                  <li key={point} className="rounded-md bg-slate-50 px-3 py-2">
+                  <li key={point} className="rounded-full bg-[#fbfcf4] px-3 py-2">
                     {point}
                   </li>
                 ))}
@@ -37,7 +37,7 @@ export function BootcampTimeline() {
             </article>
           ))}
         </div>
-        <p className="mt-8 rounded-lg bg-forest-900 p-5 text-sm font-semibold leading-6 text-white">
+        <p className="mt-8 rounded-[2rem] bg-forest-900 p-5 text-sm font-semibold leading-6 text-white">
           By the end of the program, each student or team will have a completed
           environmental research project, an ArcGIS StoryMap, and a symposium
           presentation.
@@ -46,3 +46,4 @@ export function BootcampTimeline() {
     </section>
   );
 }
+

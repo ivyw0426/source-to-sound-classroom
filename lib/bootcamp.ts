@@ -178,7 +178,7 @@ export const bootcampFaqs = [
   {
     question: "Who is the bootcamp for?",
     answer:
-      "The program is designed for students in grades 6-8. An adult parent, guardian, teacher, administrator, or program partner must create the account and submit the application.",
+      "The program is designed for K-8 students. An adult parent, guardian, teacher, administrator, or program partner must create the account and submit the application.",
   },
   {
     question: "Does my student need previous research experience?",

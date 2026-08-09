@@ -19,11 +19,11 @@ export function ButtonLink({
     <Link
       href={href}
       className={cn(
-        "focus-ring inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition",
+        "focus-ring inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-bold transition",
         variant === "primary" &&
           "bg-water-700 text-white shadow-soft hover:bg-water-900",
         variant === "secondary" &&
-          "bg-white text-water-900 ring-1 ring-water-100 hover:bg-water-50",
+          "bg-white/90 text-water-900 ring-1 ring-water-700/30 hover:bg-water-50",
         variant === "ghost" &&
           "bg-transparent text-water-900 hover:bg-water-50",
         className,

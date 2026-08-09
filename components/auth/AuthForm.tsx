@@ -54,14 +54,14 @@ export function AuthForm({
   return (
     <form
       action={formAction}
-      className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+      className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm sm:p-6"
     >
-      <h1 className="text-3xl font-bold text-slate-950">{title}</h1>
+      <h1 className="font-display text-4xl font-bold text-slate-950">{title}</h1>
       <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
 
       {state.message ? (
         <div
-          className={`mt-5 rounded-md p-3 text-sm font-medium leading-6 ${
+          className={`mt-5 rounded-full p-3 text-sm font-medium leading-6 ${
             state.status === "success"
               ? "bg-forest-50 text-forest-900"
               : "bg-red-50 text-red-800"
@@ -91,7 +91,7 @@ export function AuthForm({
             <select
               name="role"
               required
-              className="focus-ring mt-2 h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800"
+              className="focus-ring mt-2 h-11 w-full rounded-full border border-forest-100 bg-white px-3 text-sm text-slate-800"
             >
               <option value="">Select your role</option>
               {adultRoles.map((role) => (
@@ -122,7 +122,7 @@ export function AuthForm({
         ) : null}
 
         {mode === "signup" ? (
-          <label className="flex gap-3 rounded-md border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-950">
+          <label className="flex gap-3 rounded-full border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-950">
             <input
               type="checkbox"
               name="adultConfirmation"
@@ -140,7 +140,7 @@ export function AuthForm({
       <button
         type="submit"
         disabled={isPending}
-        className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-water-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-water-900 disabled:cursor-wait disabled:bg-slate-400"
+        className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-water-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-water-900 disabled:cursor-wait disabled:bg-slate-400"
       >
         {isPending ? <LoaderCircle aria-hidden="true" size={16} className="animate-spin" /> : null}
         {mode === "signup"
@@ -198,8 +198,9 @@ function TextInput({
         name={name}
         type={type}
         required={required}
-        className="focus-ring mt-2 h-11 w-full rounded-md border border-slate-300 px-3 text-sm text-slate-800"
+        className="focus-ring mt-2 h-11 w-full rounded-full border border-forest-100 px-3 text-sm text-slate-800"
       />
     </label>
   );
 }
+

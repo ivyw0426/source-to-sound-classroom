@@ -182,7 +182,7 @@ export default function BootcampPage() {
         <div className="absolute inset-0 bg-water-900/70" />
         <div className="relative mx-auto grid min-h-[62vh] max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
           <div className="text-white">
-            <p className="inline-flex rounded-md bg-white/15 px-3 py-1 text-sm font-semibold ring-1 ring-white/25">
+            <p className="inline-flex rounded-full bg-white/15 px-3 py-1 text-sm font-semibold ring-1 ring-white/25">
               Online bootcamp
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
@@ -196,7 +196,7 @@ export default function BootcampPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/bootcamp/apply"
-                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-water-900 hover:bg-water-50"
+                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-water-900 hover:bg-water-50"
               >
                 Apply for a Class Slot
                 <ArrowRight aria-hidden="true" size={16} />
@@ -204,14 +204,14 @@ export default function BootcampPage() {
               <a
                 href="/bootcamp/bootcamp-lesson-plan.pdf"
                 download
-                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/25 hover:bg-white/15"
+                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/25 hover:bg-white/15"
               >
                 Download Lesson Plan PDF
                 <Download aria-hidden="true" size={16} />
               </a>
             </div>
           </div>
-          <div className="rounded-lg border border-white/30 bg-white/90 p-5 shadow-soft backdrop-blur">
+          <div className="rounded-[2rem] border border-white/30 bg-white/90 p-5 shadow-soft backdrop-blur">
             <h2 className="text-lg font-bold text-slate-950">
               Weekly structure
             </h2>
@@ -219,7 +219,7 @@ export default function BootcampPage() {
               {weeklyStructure.map((item) => (
                 <li
                   key={item}
-                  className="rounded-md bg-slate-50 px-3 py-2 text-sm font-semibold leading-6 text-slate-700"
+                  className="rounded-full bg-[#fbfcf4] px-3 py-2 text-sm font-semibold leading-6 text-slate-700"
                 >
                   {item}
                 </li>
@@ -235,7 +235,7 @@ export default function BootcampPage() {
             {overviewCards.map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                className="rounded-[2rem] border border-forest-100 bg-[#fbfcf4] p-5 shadow-sm"
               >
                 <item.icon aria-hidden="true" size={26} className="text-water-700" />
                 <h2 className="mt-4 text-xl font-bold text-slate-950">
@@ -256,21 +256,21 @@ export default function BootcampPage() {
             <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
               Materials needed
             </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950">
+            <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-slate-950">
               Before the first Zoom lesson
             </h2>
             <ul className="mt-6 grid gap-3">
               {materialsNeeded.map((material) => (
                 <li
                   key={material}
-                  className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-medium leading-6 text-slate-700"
+                  className="rounded-[2rem] border border-forest-100 bg-white/90 p-4 text-sm font-medium leading-6 text-slate-700"
                 >
                   {material}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm">
             <div className="flex items-center gap-3">
               <Laptop aria-hidden="true" size={26} className="text-water-700" />
               <h2 className="text-2xl font-bold text-slate-950">
@@ -293,7 +293,7 @@ export default function BootcampPage() {
             <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
               Lesson plan
             </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-normal text-slate-950">
+            <h2 className="mt-2 font-display text-4xl font-bold tracking-normal text-slate-950">
               Five weekly sessions
             </h2>
           </div>
@@ -301,10 +301,10 @@ export default function BootcampPage() {
             {lessons.map((lesson) => (
               <article
                 key={lesson.label}
-                className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                className="rounded-[2rem] border border-forest-100 bg-[#fbfcf4] p-5 shadow-sm"
               >
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="rounded-md bg-water-700 px-3 py-1.5 text-xs font-bold uppercase text-white">
+                  <span className="rounded-full bg-water-700 px-3 py-1.5 text-xs font-bold uppercase text-white">
                     {lesson.label}
                   </span>
                   <lesson.icon aria-hidden="true" size={22} className="text-water-700" />
@@ -321,7 +321,7 @@ export default function BootcampPage() {
                       {lesson.agenda.map((item) => (
                         <li
                           key={item}
-                          className="rounded-md bg-white px-3 py-2 text-sm leading-6 text-slate-700"
+                          className="rounded-full bg-white px-3 py-2 text-sm leading-6 text-slate-700"
                         >
                           {item}
                         </li>
@@ -337,14 +337,14 @@ export default function BootcampPage() {
                         {lesson.homework.map((item) => (
                           <li
                             key={item}
-                            className="rounded-md bg-white px-3 py-2 text-sm leading-6 text-slate-700"
+                            className="rounded-full bg-white px-3 py-2 text-sm leading-6 text-slate-700"
                           >
                             {item}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="mt-3 rounded-md bg-white px-3 py-2 text-sm leading-6 text-slate-700">
+                      <p className="mt-3 rounded-full bg-white px-3 py-2 text-sm leading-6 text-slate-700">
                         No homework listed for the symposium.
                       </p>
                     )}
@@ -357,10 +357,10 @@ export default function BootcampPage() {
       </section>
 
       <section className="px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-lg bg-forest-900 p-8 text-white shadow-soft sm:p-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] bg-forest-900 p-8 text-white shadow-soft sm:p-10">
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
-              <h2 className="text-3xl font-bold">
+              <h2 className="font-display text-4xl font-bold">
                 Ready to request a class slot?
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-forest-50">
@@ -371,7 +371,7 @@ export default function BootcampPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/bootcamp/apply"
-                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-water-900 hover:bg-water-50"
+                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-water-900 hover:bg-water-50"
               >
                 Start Application
                 <ArrowRight aria-hidden="true" size={16} />
@@ -379,7 +379,7 @@ export default function BootcampPage() {
               <a
                 href="/bootcamp/bootcamp-lesson-plan.pdf"
                 download
-                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 hover:bg-white/15"
+                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 hover:bg-white/15"
               >
                 Download PDF
                 <Download aria-hidden="true" size={16} />
@@ -391,3 +391,4 @@ export default function BootcampPage() {
     </>
   );
 }
+

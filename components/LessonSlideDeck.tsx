@@ -25,7 +25,7 @@ export function LessonSlideDeck({
   }
 
   return (
-    <section className="flex min-h-[420px] flex-col rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
+    <section className="flex min-h-[420px] flex-col rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 className="text-xl font-bold text-slate-950">{title}</h3>
@@ -35,12 +35,12 @@ export function LessonSlideDeck({
               : "PDF preview placeholder for the complete lesson slides."}
           </p>
         </div>
-        <span className="rounded-md bg-water-50 px-3 py-1.5 text-xs font-bold uppercase text-water-900">
+        <span className="rounded-full bg-water-50 px-3 py-1.5 text-xs font-bold uppercase text-water-900">
           {hasSlides ? `${slideImages.length} slides` : "Coming soon"}
         </span>
       </div>
 
-      <div className="mt-5 flex flex-1 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white">
+      <div className="mt-5 flex flex-1 items-center justify-center overflow-hidden rounded-[1.5rem] border border-forest-100 bg-white">
         {hasSlides ? (
           <img
             src={currentSlide}
@@ -67,7 +67,7 @@ export function LessonSlideDeck({
           onClick={showPreviousSlide}
           disabled={!hasSlides || currentIndex === 0}
           aria-label="Previous slide"
-          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
         >
           <ChevronLeft aria-hidden="true" size={20} />
         </button>
@@ -79,7 +79,7 @@ export function LessonSlideDeck({
           onClick={showNextSlide}
           disabled={!hasSlides || currentIndex === slideImages.length - 1}
           aria-label="Next slide"
-          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full bg-water-700 text-white transition hover:bg-water-900 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500"
         >
           <ChevronRight aria-hidden="true" size={20} />
         </button>

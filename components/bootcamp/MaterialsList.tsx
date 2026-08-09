@@ -20,7 +20,7 @@ export function MaterialsList() {
           title="Suggested project materials"
           items={suggestedMaterials}
         />
-        <div className="rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950 lg:col-span-2">
+        <div className="rounded-[2rem] border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950 lg:col-span-2">
           <div className="flex items-center gap-2 font-bold">
             <ShieldAlert aria-hidden="true" size={20} />
             Safety notice
@@ -46,12 +46,12 @@ function RequirementCard({
   items: string[];
 }) {
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+    <article className="rounded-[2rem] border border-forest-100 bg-white/90 p-6 shadow-sm">
       <Icon aria-hidden="true" size={26} className="text-water-700" />
       <h2 className="mt-4 text-2xl font-bold text-slate-950">{title}</h2>
       <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700">
         {items.map((item) => (
-          <li key={item} className="rounded-md bg-slate-50 px-3 py-2">
+          <li key={item} className="rounded-full bg-[#fbfcf4] px-3 py-2">
             {item}
           </li>
         ))}
@@ -59,3 +59,4 @@ function RequirementCard({
     </article>
   );
 }
+

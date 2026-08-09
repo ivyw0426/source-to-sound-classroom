@@ -13,7 +13,7 @@ export function ClassSlotCard({ cohort }: { cohort: BootcampCohort }) {
           : "Closed";
 
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <article className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-bold text-slate-950">{cohort.name}</h3>
         <span className="rounded-full bg-water-50 px-3 py-1 text-xs font-bold text-water-900">
@@ -39,3 +39,4 @@ export function ClassSlotCard({ cohort }: { cohort: BootcampCohort }) {
     </article>
   );
 }
+

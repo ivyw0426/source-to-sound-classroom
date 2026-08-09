@@ -8,36 +8,29 @@ type LessonCardProps = {
 
 export function LessonCard({ lesson }: LessonCardProps) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
-      <div className="relative min-h-[190px] overflow-hidden bg-water-900 p-5 text-white">
+    <Link
+      href={`/lessons/${lesson.slug}`}
+      aria-label={`View ${lesson.title} lesson`}
+      className="focus-ring group flex h-full flex-col overflow-hidden rounded-[1.1rem] border border-forest-100 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-water-900 text-white">
         <img
           src={lesson.imageSrc}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          alt={lesson.imageAlt}
+          className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
         />
-        <div className="absolute inset-0 bg-water-900/55" />
-        <div className="relative">
-          <div className="flex flex-wrap gap-2">
-            {lesson.topics.slice(0, 3).map((topic) => (
-              <span
-                key={topic}
-                className="rounded-md bg-white/85 px-2.5 py-1 text-xs font-semibold text-water-900"
-              >
-                {topic}
-              </span>
-            ))}
-          </div>
-          <h2 className="mt-4 text-xl font-bold leading-snug text-white">
-            {lesson.title}
-          </h2>
-        </div>
+        <span className="absolute left-4 top-4 rounded-full bg-forest-700 px-3 py-1 text-[11px] font-bold text-white shadow-sm">
+          {lesson.topics[0]}
+        </span>
       </div>
-      <div className="flex flex-1 flex-col p-5">
-        <p className="flex-1 text-sm leading-6 text-slate-600">
+      <div className="flex flex-1 flex-col p-4">
+        <h2 className="text-lg font-bold leading-snug text-slate-950">
+          {lesson.title}
+        </h2>
+        <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
           {lesson.shortDescription}
         </p>
-        <dl className="mt-5 grid gap-3 border-t border-slate-100 pt-4 text-sm text-slate-600 sm:grid-cols-2">
+        <dl className="mt-4 grid gap-2 border-t border-forest-100 pt-3 text-xs text-slate-600 sm:grid-cols-2">
           <div className="flex items-center gap-2">
             <Layers3 aria-hidden="true" size={16} className="text-forest-700" />
             <dt className="sr-only">Grade range</dt>
@@ -54,19 +47,16 @@ export function LessonCard({ lesson }: LessonCardProps) {
             <dd>{lesson.difficulty}</dd>
           </div>
         </dl>
-        <div className="mt-5 flex items-center justify-between gap-3">
-          <span className="rounded-md bg-forest-50 px-3 py-1.5 text-xs font-semibold text-forest-900">
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <span className="rounded-md bg-forest-50 px-2.5 py-1.5 text-[11px] font-bold text-forest-900">
             {lesson.activityType}
           </span>
-          <Link
-            href={`/lessons/${lesson.slug}`}
-            className="focus-ring inline-flex items-center gap-2 rounded-md bg-water-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-water-900"
-          >
+          <span className="inline-flex items-center gap-2 rounded-md bg-water-700 px-3 py-2 text-xs font-bold text-white transition group-hover:bg-water-900">
             View Lesson
             <ArrowRight aria-hidden="true" size={16} />
-          </Link>
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

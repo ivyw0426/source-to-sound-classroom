@@ -34,7 +34,7 @@ const founders = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-[#fbfcf4]">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1fr_0.9fr] lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
@@ -49,11 +49,11 @@ export default function AboutPage() {
               young people understand how everyday stormwater decisions affect
               local creeks, Puget Sound, and salmon habitat. Source to Sound
               Classroom turns that mission into practical lessons teachers can
-              use in grades 6-8 science, enrichment, and club settings.
+              use in K-8 science, enrichment, and club settings.
             </p>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
-            <h2 className="text-xl font-bold text-slate-950">Mission</h2>
+          <div className="rounded-[2rem] border border-forest-100 bg-white/90 p-6 shadow-sm">
+            <h2 className="font-display text-3xl font-bold text-water-900">Mission</h2>
             <p className="mt-4 text-sm leading-6 text-slate-700">
               Make environmental STEM more accessible by providing free,
               project-based curriculum that connects classrooms to local
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 "Local relevance for Pacific Northwest watersheds",
                 "Future pathways for student showcases and symposium work",
               ].map((item) => (
-                <div key={item} className="rounded-md bg-white px-4 py-3 text-sm font-semibold text-slate-700">
+                <div key={item} className="rounded-full bg-forest-50 px-4 py-3 text-sm font-semibold text-slate-700">
                   {item}
                 </div>
               ))}
@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="bg-[#fbfcf4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Focus areas" title="Practical topics with local impact">
             The curriculum is intentionally focused, so teachers can build a
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 text: "Future partnerships with schools, cities, volunteers, and watershed groups.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+              <div key={item.title} className="rounded-[2rem] border border-forest-100 bg-white/90 p-5 shadow-sm">
                 <item.icon aria-hidden="true" size={26} className="text-water-700" />
                 <h2 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
@@ -115,14 +115,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-[#fbfcf4] py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
           <div>
             <SectionHeading eyebrow="Founders" title="Meet the people behind Source to Sound">
               This section is ready for founder photos, names, roles, and short
               bios as the nonprofit story grows.
             </SectionHeading>
-            <div className="mt-6 rounded-lg border border-forest-100 bg-forest-50 p-5">
+            <div className="mt-6 rounded-[2rem] border border-forest-100 bg-forest-50 p-5">
               <Leaf aria-hidden="true" size={24} className="text-forest-700" />
               <p className="mt-4 text-sm leading-6 text-slate-700">
                 Keep founder profiles concise, credible, and teacher-facing:
@@ -135,7 +135,7 @@ export default function AboutPage() {
             {founders.map((founder) => (
               <article
                 key={founder.role}
-                className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm"
+                className="overflow-hidden rounded-[2rem] border border-forest-100 bg-white/90 shadow-sm"
               >
                 <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-forest-100 via-water-50 to-white">
                   <div className="text-center">
@@ -165,9 +165,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-[#fbfcf4] py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-normal text-slate-950">
+          <h2 className="font-display text-4xl font-bold tracking-normal text-water-900">
             Built to grow with teachers and partners.
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">

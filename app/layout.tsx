@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Kalam } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -7,10 +7,18 @@ import { Header } from "@/components/Header";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-sans",
+});
+
+const kalam = Kalam({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+  weight: ["400", "700"],
 });
 
 const description =
-  "Free project-based environmental STEM lessons for grades 6-8 teachers focused on stormwater, watersheds, salmon habitat, and water quality.";
+  "Free project-based environmental STEM lessons for K-8 teachers focused on stormwater, watersheds, salmon habitat, and water quality.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://source-to-sound-classroom.vercel.app"),
@@ -33,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${kalam.variable} font-sans`}>
         <Header />
         <main>{children}</main>
         <Footer />

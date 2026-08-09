@@ -57,7 +57,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
   const relatedLessons = getRelatedLessons(lesson.slug);
 
   return (
-    <article>
+    <article className="bg-[#fbfcf4]">
       <section className="relative overflow-hidden bg-water-900">
         <img
           src={lesson.imageSrc}
@@ -93,7 +93,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                 {lesson.summary}
               </p>
             </div>
-            <aside className="rounded-lg border border-white/50 bg-white/90 p-5 shadow-soft backdrop-blur">
+            <aside className="rounded-[2rem] border border-white/50 bg-white/90 p-5 shadow-soft backdrop-blur">
               <h2 className="text-sm font-bold uppercase tracking-wide text-slate-700">
                 Lesson snapshot
               </h2>
@@ -108,7 +108,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
+      <section className="border-y border-forest-100 bg-[#fbfcf4]">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-wide text-forest-700">
@@ -129,7 +129,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
             />
 
             <div className="grid gap-5">
-              <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+              <section className="rounded-[2rem] border border-forest-100 bg-white/90 p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-md bg-forest-50 text-forest-700">
                     <CheckCircle2 aria-hidden="true" size={21} />
@@ -177,7 +177,7 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
       </section>
 
       {relatedLessons.length > 0 ? (
-        <section className="bg-white py-14">
+        <section className="bg-[#fbfcf4] py-14">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-slate-950">
               Related lessons

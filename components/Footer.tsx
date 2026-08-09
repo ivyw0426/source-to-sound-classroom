@@ -3,15 +3,15 @@ import { Leaf, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer className="border-t border-forest-100 bg-[#fbfcf4]">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
         <div>
           <div className="flex items-center gap-2 text-water-900">
             <Leaf aria-hidden="true" size={20} />
-            <span className="font-bold">Source to Sound Classroom</span>
+            <span className="font-display text-xl font-bold">Source to Sound</span>
           </div>
           <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600">
-            Free project-based environmental STEM lessons for grades 6-8,
+            Free project-based environmental STEM lessons for K-8 classrooms,
             focused on stormwater, watersheds, salmon habitat, and water
             quality.
           </p>
@@ -22,13 +22,13 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h2 className="text-sm font-bold text-slate-900">Explore</h2>
+          <h2 className="font-display text-xl font-bold text-water-900">Explore</h2>
           <div className="mt-3 grid gap-2 text-sm text-slate-600">
             <Link className="hover:text-water-900" href="/lessons">
               Lesson Library
             </Link>
-            <Link className="hover:text-water-900" href="/student-showcase">
-              Student Showcase
+            <Link className="hover:text-water-900" href="/initiatives">
+              Initiatives
             </Link>
             <Link className="hover:text-water-900" href="/bootcamp">
               Online Bootcamp
@@ -42,7 +42,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h2 className="text-sm font-bold text-slate-900">Contact</h2>
+          <h2 className="font-display text-xl font-bold text-water-900">Contact</h2>
           <Link
             href="/contact"
             className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-water-700 hover:text-water-900"
