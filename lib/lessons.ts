@@ -220,7 +220,7 @@ export const lessons: Lesson[] = [
     deck: {
       title: "Save the Stream!",
       pdfHref: "/lesson-downloads/save-the-stream.pdf",
-      slideImages: numberedSlideImages("save-the-stream", 8),
+      slideImages: numberedSlideImages("save-the-stream", 9),
     },
   },
   {
