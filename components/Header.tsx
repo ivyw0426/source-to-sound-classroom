@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Leaf } from "lucide-react";
 import { logoutAction } from "@/app/auth-actions";
 import { UserMenu } from "@/components/auth/UserMenu";
 import { getCurrentUser } from "@/lib/supabase/server";
@@ -22,8 +21,13 @@ export async function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
       >
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-md">
-          <span className="flex h-12 w-12 items-center justify-center rounded-[48%_52%_44%_56%/58%_42%_58%_42%] bg-forest-50 text-water-900 ring-1 ring-forest-100">
-            <Leaf aria-hidden="true" size={21} />
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-forest-100">
+            <img
+              src="/images/sts-logo.png"
+              alt=""
+              aria-hidden="true"
+              className="h-10 w-10 object-contain"
+            />
           </span>
           <span className="leading-tight">
             <span className="block font-display text-xl font-bold leading-5 text-water-900">
