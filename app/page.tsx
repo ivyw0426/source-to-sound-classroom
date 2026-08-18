@@ -63,10 +63,12 @@ export default function HomePage() {
             Open-access K-8 curriculum
           </div>
           <h1 className="max-w-2xl font-display text-5xl font-bold leading-[1.05] tracking-normal text-water-900 sm:text-6xl lg:text-[72px]">
-            Watershed STEM made simple.
+            Source to Sound
           </h1>
           <p className="mt-5 max-w-md text-lg leading-8 text-slate-700">
-            Free hands-on lessons and youth research programs for K-8 classrooms.
+            We provide K-8 access to stormwater and watershed research through
+            hands-on field projects, building a generation that understands
+            where their water goes and why it matters.
           </p>
           <div className="mt-8 grid max-w-lg gap-3 sm:grid-cols-2">
             {primaryActions.map((action) => (
