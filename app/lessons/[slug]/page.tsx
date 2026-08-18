@@ -12,6 +12,7 @@ import Link from "next/link";
 import type { AriaAttributes, ComponentType } from "react";
 import { GatedDownload } from "@/components/GatedDownload";
 import { LessonCard } from "@/components/LessonCard";
+import { LessonPlanPreview } from "@/components/LessonPlanPreview";
 import { LessonSlideDeck } from "@/components/LessonSlideDeck";
 import { getLessonBySlug, getRelatedLessons, lessons } from "@/lib/lessons";
 import { getCurrentUser } from "@/lib/supabase/server";
@@ -144,12 +145,10 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
               </section>
 
               {lesson.lessonPlan.href ? (
-                <GatedDownload
-                  href={isAuthenticated ? lesson.lessonPlan.href : ""}
+                <LessonPlanPreview
+                  href={lesson.lessonPlan.href}
                   label={lesson.lessonPlan.label}
                   isAuthenticated={isAuthenticated}
-                  variant="card"
-                  eyebrow="Lesson plan"
                   description="Lesson plans are available to registered Source to Sound users."
                 />
               ) : null}
