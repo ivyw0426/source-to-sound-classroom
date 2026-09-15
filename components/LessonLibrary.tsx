@@ -33,6 +33,7 @@ const activityOptions: Array<"Any activity" | ActivityType> = [
 
 type LessonLibraryProps = {
   lessons: Lesson[];
+  isAuthenticated: boolean;
 };
 
 function TopicIcon({ topic }: { topic: string }) {
@@ -51,7 +52,7 @@ function TopicIcon({ topic }: { topic: string }) {
   return <Leaf aria-hidden="true" size={14} />;
 }
 
-export function LessonLibrary({ lessons }: LessonLibraryProps) {
+export function LessonLibrary({ lessons, isAuthenticated }: LessonLibraryProps) {
   const [query, setQuery] = useState("");
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [duration, setDuration] = useState(durationOptions[0]);
@@ -223,7 +224,11 @@ export function LessonLibrary({ lessons }: LessonLibraryProps) {
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {filteredLessons.map((lesson) => (
-              <LessonCard key={lesson.slug} lesson={lesson} />
+              <LessonCard
+                key={lesson.slug}
+                lesson={lesson}
+                isAuthenticated={isAuthenticated}
+              />
             ))}
           </div>
         </section>

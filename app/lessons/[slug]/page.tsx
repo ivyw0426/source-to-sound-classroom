@@ -56,6 +56,10 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
   const user = await getCurrentUser();
   const isAuthenticated = Boolean(user);
   const relatedLessons = getRelatedLessons(lesson.slug);
+  const previewSlideImages =
+    !isAuthenticated && lesson.deck.watermarkedSlideImages
+      ? lesson.deck.watermarkedSlideImages
+      : lesson.deck.slideImages;
   const additionalDownloads = lesson.downloads.filter(
     (download) =>
       download.href &&
@@ -132,7 +136,8 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
           <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(300px,0.75fr)]">
             <LessonSlideDeck
               title={lesson.deck.title}
-              slideImages={lesson.deck.slideImages}
+              slideImages={previewSlideImages}
+              isWatermarked={!isAuthenticated}
             />
 
             <div className="grid gap-5">
@@ -207,7 +212,11 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
             </h2>
             <div className="mt-6 grid gap-5 md:grid-cols-3">
               {relatedLessons.map((relatedLesson) => (
-                <LessonCard key={relatedLesson.slug} lesson={relatedLesson} />
+                <LessonCard
+                  key={relatedLesson.slug}
+                  lesson={relatedLesson}
+                  isAuthenticated={isAuthenticated}
+                />
               ))}
             </div>
           </div>

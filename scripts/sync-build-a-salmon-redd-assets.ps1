@@ -20,21 +20,29 @@ foreach ($file in $files.Values) {
 }
 
 $slideDir = Join-Path $RepoRoot "public\lesson-slides\build-a-salmon-redd"
+$watermarkedSlideDir = Join-Path $RepoRoot "public\lesson-slides-watermarked\build-a-salmon-redd"
 $planDir = Join-Path $RepoRoot "public\lesson-plans"
 $downloadDir = Join-Path $RepoRoot "public\lesson-downloads"
 $thumbnailDir = Join-Path $RepoRoot "public\lesson-thumbnails"
 
-foreach ($dir in @($slideDir, $planDir, $downloadDir, $thumbnailDir)) {
+foreach ($dir in @($slideDir, $watermarkedSlideDir, $planDir, $downloadDir, $thumbnailDir)) {
   New-Item -ItemType Directory -Force -Path $dir | Out-Null
 }
 
 $resolvedSlideDir = (Resolve-Path $slideDir).Path
+$resolvedWatermarkedSlideDir = (Resolve-Path $watermarkedSlideDir).Path
 $expectedSlideRoot = (Resolve-Path (Join-Path $RepoRoot "public\lesson-slides")).Path
+$expectedWatermarkedSlideRoot = (Resolve-Path (Join-Path $RepoRoot "public\lesson-slides-watermarked")).Path
 if (-not $resolvedSlideDir.StartsWith($expectedSlideRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
   throw "Slide output path is outside the expected public lesson-slides directory."
 }
+if (-not $resolvedWatermarkedSlideDir.StartsWith($expectedWatermarkedSlideRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+  throw "Watermarked slide output path is outside the expected public lesson-slides-watermarked directory."
+}
 
-Get-ChildItem -LiteralPath $slideDir -Filter "slide-*.jpg" -File |
+Get-ChildItem -LiteralPath $slideDir -Filter "slide-*.jpg" -File -ErrorAction SilentlyContinue |
+  Remove-Item -Force
+Get-ChildItem -LiteralPath $watermarkedSlideDir -Filter "slide-*.jpg" -File -ErrorAction SilentlyContinue |
   Remove-Item -Force
 
 Copy-Item -LiteralPath (Join-Path $SourceDir $files.LessonPlan) -Destination (Join-Path $planDir "build-a-salmon-redd-plan.pdf")
@@ -51,7 +59,9 @@ if (-not (Test-Path -LiteralPath $poppler)) {
   $poppler = $popplerCommand.Source
 }
 
-& $poppler -jpeg -r 144 (Join-Path $SourceDir $files.WatermarkedSlides) (Join-Path $slideDir "slide")
+& $poppler -jpeg -r 144 (Join-Path $SourceDir $files.Slides) (Join-Path $slideDir "slide")
+& $poppler -jpeg -r 144 (Join-Path $SourceDir $files.WatermarkedSlides) (Join-Path $watermarkedSlideDir "slide")
 Copy-Item -LiteralPath (Join-Path $slideDir "slide-1.jpg") -Destination (Join-Path $thumbnailDir "build-a-salmon-redd.jpg")
+Copy-Item -LiteralPath (Join-Path $watermarkedSlideDir "slide-1.jpg") -Destination (Join-Path $thumbnailDir "build-a-salmon-redd-watermarked.jpg")
 
 Write-Output "Build a Salmon Redd assets synced from $SourceDir"

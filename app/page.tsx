@@ -13,8 +13,11 @@ import {
 import { ButtonLink } from "@/components/ButtonLink";
 import { LessonCard } from "@/components/LessonCard";
 import { lessons } from "@/lib/lessons";
+import { getCurrentUser } from "@/lib/supabase/server";
 
 const featuredLessons = lessons.filter((lesson) => lesson.featured).slice(0, 3);
+
+export const dynamic = "force-dynamic";
 
 const primaryActions = [
   {
@@ -49,7 +52,10 @@ const exploreItems = [
   { icon: Sprout, title: "Initiatives", href: "/initiatives" },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const user = await getCurrentUser();
+  const isAuthenticated = Boolean(user);
+
   return (
     <section className="relative isolate overflow-hidden bg-[#fbfcf4]">
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-forest-50 to-transparent" />
@@ -162,7 +168,11 @@ export default function HomePage() {
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {featuredLessons.map((lesson) => (
-            <LessonCard key={lesson.slug} lesson={lesson} />
+            <LessonCard
+              key={lesson.slug}
+              lesson={lesson}
+              isAuthenticated={isAuthenticated}
+            />
           ))}
         </div>
       </section>

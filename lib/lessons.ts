@@ -14,6 +14,7 @@ export type LessonDeck = {
   title: string;
   pdfHref?: string;
   slideImages: string[];
+  watermarkedSlideImages?: string[];
 };
 
 export type Lesson = {
@@ -22,6 +23,7 @@ export type Lesson = {
   shortDescription: string;
   summary: string;
   imageSrc: string;
+  watermarkedImageSrc?: string;
   imageAlt: string;
   gradeRange: string;
   duration: string;
@@ -52,6 +54,14 @@ function numberedSlideImages(folder: string, count: number, padded = false) {
   });
 }
 
+function numberedWatermarkedSlideImages(folder: string, count: number, padded = false) {
+  return Array.from({ length: count }, (_, index) => {
+    const slideNumber = index + 1;
+    const fileNumber = padded ? String(slideNumber).padStart(2, "0") : String(slideNumber);
+    return `/lesson-slides-watermarked/${folder}/slide-${fileNumber}.jpg`;
+  });
+}
+
 export const topicFilters = [
   "Stormwater",
   "Runoff",
@@ -75,6 +85,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students investigate what makes healthy salmon spawning habitat by designing a model redd, the gravel nest where salmon lay their eggs. Teams arrange gravel, pebbles, sand, and model eggs in a stream tray, run a stream flow test, then add fine sediment for a sediment storm test to observe how erosion upstream can change habitat downstream.",
     imageSrc: "/lesson-thumbnails/build-a-salmon-redd.jpg",
+    watermarkedImageSrc: "/lesson-thumbnails/build-a-salmon-redd-watermarked.jpg",
     imageAlt:
       "Build a Salmon Redd lesson slide showing a streambed challenge for keeping salmon eggs safe",
     gradeRange: "Grades 3-5",
@@ -149,6 +160,7 @@ export const lessons: Lesson[] = [
       title: "Build a Salmon Redd",
       pdfHref: "/lesson-downloads/build-a-salmon-redd.pdf",
       slideImages: numberedSlideImages("build-a-salmon-redd", 9),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("build-a-salmon-redd", 9),
     },
     featured: true,
   },
@@ -160,6 +172,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students explore how stormwater runoff carries pollutants from roads and parking lots into salmon streams without filtration. Teams design, build, test, and compare model water filters using pebbles, gravel, sand, cotton balls, and coffee filters, then connect their results to real-world filtration systems such as rain gardens and water treatment plants.",
     imageSrc: "/lesson-thumbnails/water-filtration-challenge.png",
+    watermarkedImageSrc: "/lesson-thumbnails/water-filtration-challenge-watermarked.jpg",
     imageAlt:
       "Students testing water with clear containers during a hands-on filtration challenge",
     gradeRange: "Grades 2-5",
@@ -229,6 +242,7 @@ export const lessons: Lesson[] = [
       title: "Clean the Water Filtration Challenge",
       pdfHref: "/lesson-downloads/water-filtration-challenge.pdf",
       slideImages: numberedSlideImages("water-filtration-challenge", 8),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("water-filtration-challenge", 8),
     },
     featured: true,
   },
@@ -318,6 +332,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students investigate how quickly rainwater moves across different ground surfaces by building simulated surface ramps. Teams test foil or plastic, bare soil, grass or moss, gravel, and sponge surfaces, then compare which surfaces create runoff and which absorb or slow water.",
     imageSrc: "/lesson-thumbnails/raindrop-racers.png",
+    watermarkedImageSrc: "/lesson-thumbnails/raindrop-racers-watermarked.jpg",
     imageAlt:
       "Rain drops on a green leaf during a runoff and absorption investigation",
     gradeRange: "Kindergarten-Grade 2",
@@ -392,6 +407,7 @@ export const lessons: Lesson[] = [
       title: "Raindrop Racers",
       pdfHref: "/lesson-downloads/raindrop-racers.pdf",
       slideImages: numberedSlideImages("raindrop-racers", 8),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("raindrop-racers", 8),
     },
   },
   {
@@ -402,6 +418,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students build ecocolumns from stacked 2-liter bottles with aquatic, decomposition, and terrestrial chambers. They test water and soil conditions, observe how water moves through the system, and connect the model to how soil and roots in rain gardens filter runoff.",
     imageSrc: "/lesson-thumbnails/filtration-lab.png",
+    watermarkedImageSrc: "/lesson-thumbnails/filtration-lab-watermarked.jpg",
     imageAlt:
       "Students working with science materials during a hands-on lab investigation",
     gradeRange: "Grades K-8",
@@ -469,6 +486,7 @@ export const lessons: Lesson[] = [
       title: "Creating an Ecocolumn",
       pdfHref: "/lesson-downloads/creating-an-ecocolumn.pdf",
       slideImages: numberedSlideImages("filtration-lab", 15, true),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("filtration-lab", 15, true),
     },
     featured: true,
   },
@@ -480,6 +498,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students investigate storm drains around their school, document each drain's condition and nearby filtration features, identify the waterway it might connect to, and combine their findings into a class map.",
     imageSrc: "/lesson-thumbnails/drain-detectives.png",
+    watermarkedImageSrc: "/lesson-thumbnails/drain-detectives-watermarked.jpg",
     imageAlt:
       "Rainwater moving along a city street near stormwater infrastructure",
     gradeRange: "Grades K-8",
@@ -544,6 +563,7 @@ export const lessons: Lesson[] = [
       title: "Drain Detectives",
       pdfHref: "/lesson-downloads/drain-detectives.pdf",
       slideImages: numberedSlideImages("drain-detectives", 7),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("drain-detectives", 7),
     },
     featured: true,
   },

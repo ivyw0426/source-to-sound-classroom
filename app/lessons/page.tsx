@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { LessonLibrary } from "@/components/LessonLibrary";
 import { lessons } from "@/lib/lessons";
+import { getCurrentUser } from "@/lib/supabase/server";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Lesson Library",
@@ -13,7 +16,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LessonsPage() {
+export default async function LessonsPage() {
+  const user = await getCurrentUser();
+  const isAuthenticated = Boolean(user);
+
   return (
     <section className="relative isolate overflow-hidden bg-[#fbfcf4]">
       <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-forest-50 to-transparent" />
@@ -27,7 +33,7 @@ export default function LessonsPage() {
           </p>
         </div>
         <div className="mt-8">
-          <LessonLibrary lessons={lessons} />
+          <LessonLibrary lessons={lessons} isAuthenticated={isAuthenticated} />
         </div>
       </div>
     </section>

@@ -4,9 +4,16 @@ import type { Lesson } from "@/lib/lessons";
 
 type LessonCardProps = {
   lesson: Lesson;
+  isAuthenticated?: boolean;
 };
 
-export function LessonCard({ lesson }: LessonCardProps) {
+export function LessonCard({ lesson, isAuthenticated = false }: LessonCardProps) {
+  const showWatermarkedPreview = !isAuthenticated;
+  const imageSrc =
+    showWatermarkedPreview && lesson.watermarkedImageSrc
+      ? lesson.watermarkedImageSrc
+      : lesson.imageSrc;
+
   return (
     <Link
       href={`/lessons/${lesson.slug}`}
@@ -15,10 +22,18 @@ export function LessonCard({ lesson }: LessonCardProps) {
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-water-900 text-white">
         <img
-          src={lesson.imageSrc}
+          src={imageSrc}
           alt={lesson.imageAlt}
           className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
         />
+        {showWatermarkedPreview ? (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-[-18%] top-1/2 -translate-y-1/2 rotate-[-18deg] bg-white/72 py-2 text-center text-[11px] font-black uppercase tracking-[0.28em] text-water-900 shadow-sm"
+          >
+            Preview
+          </span>
+        ) : null}
         <span className="absolute left-4 top-4 rounded-full bg-forest-700 px-3 py-1 text-[11px] font-bold text-white shadow-sm">
           {lesson.topics[0]}
         </span>
