@@ -61,10 +61,97 @@ export const topicFilters = [
   "Engineering",
   "Field Investigation",
   "Stream Habitat",
+  "Salmon Habitat",
+  "Erosion",
   "Low Impact Development",
 ];
 
 export const lessons: Lesson[] = [
+  {
+    slug: "build-a-salmon-redd",
+    title: "Build a Salmon Redd",
+    shortDescription:
+      "Students design and test model salmon redds to see how gravel, pebbles, sand, and sediment affect egg protection and water flow.",
+    summary:
+      "Students investigate what makes healthy salmon spawning habitat by designing a model redd, the gravel nest where salmon lay their eggs. Teams arrange gravel, pebbles, sand, and model eggs in a stream tray, run a stream flow test, then add fine sediment for a sediment storm test to observe how erosion upstream can change habitat downstream.",
+    imageSrc: "/lesson-thumbnails/build-a-salmon-redd.jpg",
+    imageAlt:
+      "Build a Salmon Redd lesson slide showing a streambed challenge for keeping salmon eggs safe",
+    gradeRange: "Grades 3-5",
+    duration: "45 minutes to 1 hour",
+    durationGroup: "1 class",
+    difficulty: "Beginner",
+    activityType: "Engineering Design",
+    materialsCost: "Low-cost classroom supplies",
+    topics: ["Salmon Habitat", "Stream Habitat", "Erosion", "Engineering"],
+    learningObjectives: [
+      "Explain what a salmon redd is and why salmon build redds in stream gravel.",
+      "Identify important conditions salmon eggs need to survive, including protection, flowing water, and oxygen.",
+      "Design and test a model salmon redd using different streambed materials.",
+      "Observe how gravel, pebbles, sand, and fine sediment affect egg protection.",
+      "Connect erosion upstream to changes in salmon habitat downstream.",
+    ],
+    materials: [
+      "1 shallow tray, plastic container, or aluminum pan per team",
+      "About 1 cup gravel per team",
+      "About 1/2 cup small pebbles or rocks per team",
+      "About 1/2 cup sand per team",
+      "5 small beads, dried beans, or other model salmon eggs per team",
+      "Fine soil for the sediment storm test",
+      "About 3-4 cups water per team",
+      "1 small cup or spoon per team",
+      "Student observation sheet",
+    ],
+    teacherPreparation: [
+      "Set up one tray station per team with gravel, pebbles, sand, model eggs, water, and a cup or spoon.",
+      "Prepare equal amounts of water for the stream flow test so teams can compare results fairly.",
+      "Prepare equal amounts of fine soil or sand for the sediment storm test.",
+      "Review expectations for pouring water gently from the upstream end of the tray and recording observations.",
+    ],
+    instructions: [
+      "Introduce the salmon life cycle and explain how adult salmon return to freshwater streams to lay eggs.",
+      "Explain that a salmon redd is a gravel nest made by a female salmon to hold and protect eggs.",
+      "Ask why salmon might bury eggs instead of leaving them on top of the streambed.",
+      "Introduce the design challenge: keep all 5 eggs inside the redd, keep them from washing away, and leave open space for water to move through the streambed.",
+      "Give each team its materials and have students plan how to arrange them before building.",
+      "Teams build their redds for 10-15 minutes, using any combination of materials but placing all 5 eggs inside the redd.",
+      "Conduct the stream flow test by pouring the same amount of water from one end of each tray and recording how many eggs stayed protected or moved away.",
+      "Conduct the sediment storm test by adding fine soil or sand upstream, pouring another equal amount of water, and observing where sediment travels and collects.",
+      "Lead a class discussion about which materials protected eggs best, how sediment changed the redd, and how people can reduce excess sediment entering salmon streams.",
+    ],
+    studentDeliverable:
+      "A completed model salmon redd and observation sheet comparing egg protection before and after the stream flow and sediment storm tests.",
+    assessmentPrompts: [
+      "Which materials worked best for protecting salmon eggs, and why?",
+      "What happened when water flowed through your redd?",
+      "Where did sediment collect during the sediment storm test?",
+      "Why might tightly packed mud or sand be a poor place for salmon eggs?",
+      "If you could rebuild your redd, what would you change?",
+    ],
+    realWorldConnection:
+      "The model shows how upstream erosion can send fine sediment into streams, fill spaces between gravel, reduce water flow around eggs, and make salmon spawning habitat less suitable.",
+    extensionIdeas: [
+      "Let teams rebuild their redds after the first test and compare the redesign results.",
+      "Graph how many eggs stayed protected across teams before and after the sediment storm test.",
+      "Connect the final takeaway to local actions such as planting native vegetation, keeping dirt out of storm drains, and reducing polluted runoff.",
+    ],
+    downloads: [
+      {
+        label: "Student Observation Sheet PDF",
+        href: "/lesson-downloads/build-a-salmon-redd-observation-sheet.pdf",
+      },
+    ],
+    lessonPlan: {
+      label: "Build a Salmon Redd Lesson Plan",
+      href: "/lesson-plans/build-a-salmon-redd-plan.pdf",
+    },
+    deck: {
+      title: "Build a Salmon Redd",
+      pdfHref: "/lesson-downloads/build-a-salmon-redd.pdf",
+      slideImages: numberedSlideImages("build-a-salmon-redd", 9),
+    },
+    featured: true,
+  },
   {
     slug: "water-filtration-challenge",
     title: "Clean the Water Filtration Challenge",

@@ -27,6 +27,8 @@ const activityOptions: Array<"Any activity" | ActivityType> = [
   "Any activity",
   "Lab Investigation",
   "Field Investigation",
+  "Engineering Design",
+  "Photography",
 ];
 
 type LessonLibraryProps = {

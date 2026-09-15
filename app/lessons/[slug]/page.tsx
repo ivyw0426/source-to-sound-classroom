@@ -56,6 +56,12 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
   const user = await getCurrentUser();
   const isAuthenticated = Boolean(user);
   const relatedLessons = getRelatedLessons(lesson.slug);
+  const additionalDownloads = lesson.downloads.filter(
+    (download) =>
+      download.href &&
+      download.href !== lesson.lessonPlan.href &&
+      download.href !== lesson.deck.pdfHref,
+  );
 
   return (
     <article className="bg-[#fbfcf4]">
@@ -170,6 +176,24 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
                   {lesson.deck.title} PDF coming soon
                 </button>
               )}
+
+              {additionalDownloads.length > 0 ? (
+                <section className="grid gap-3">
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-slate-700">
+                    Additional resources
+                  </h3>
+                  {additionalDownloads.map((download) => (
+                    <GatedDownload
+                      key={download.href}
+                      href={isAuthenticated ? download.href || "" : ""}
+                      label={download.label}
+                      isAuthenticated={isAuthenticated}
+                      variant="card"
+                      description="Classroom resource downloads are available to registered Source to Sound users."
+                    />
+                  ))}
+                </section>
+              ) : null}
             </div>
           </div>
         </div>
