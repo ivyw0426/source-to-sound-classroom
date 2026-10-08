@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   BookOpen,
-  Camera,
   Droplets,
   HeartHandshake,
   Leaf,
@@ -20,14 +20,16 @@ const founders = [
   {
     name: "Shreya Santhosh",
     role: "Co-Founder",
-    initials: "SS",
-    bio: "Add a short founder bio here with environmental education experience, school background, and the story behind Source to Sound.",
+    image: "/images/founders/shreya-santhosh.jpg",
+    imageAlt: "Shreya Santhosh outdoors",
+    bio: "Shreya Santhosh is a senior at Tesla STEM High School with a passion for cancer biology and environmental science. She has conducted immunology research and tutors younger students through organizations like The Math Agency, and previously served as a Sustainability Ambassador promoting sustainable environmental choices. Raised in the Pacific Northwest, she is committed to educating younger generations on ocean conservation and the ways pollution and water systems affect wildlife and ecosystems.",
   },
   {
     name: "Ivy Wei",
     role: "Co-Founder",
-    initials: "IW",
-    bio: "Use this space for another founder profile, including why watershed learning, salmon habitat, and student-led projects matter.",
+    image: "/images/founders/ivy-wei.jpg",
+    imageAlt: "Ivy Wei at Woodland Park Zoo",
+    bio: "Ivy Wei is a senior at Tesla STEM High School interested in environmental education and accessible STEM learning for younger students. She has collaborated with the University of Washington's outreach program SEAS (Students Explore Aquatic Sciences) on environmental science curriculum development and presented hands-on educational activities at its Open House. Beyond environmental education, Ivy has conducted independent research on Alzheimer's and pursued advanced coursework through the University of Washington. Growing up in the Pacific Northwest, she is especially passionate about the region's natural ecosystems, particularly salmon and their vital role in local watersheds. She hopes to share her passion through inspiring younger generations to explore the natural world.",
   },
 ];
 
@@ -119,34 +121,33 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
           <div>
             <SectionHeading eyebrow="Founders" title="Meet the people behind Source to Sound">
-              This section is ready for founder photos, names, roles, and short
-              bios as the nonprofit story grows.
+              Source to Sound is led by students who care about making
+              environmental science local, practical, and welcoming for younger
+              learners.
             </SectionHeading>
             <div className="mt-6 rounded-[2rem] border border-forest-100 bg-forest-50 p-5">
               <Leaf aria-hidden="true" size={24} className="text-forest-700" />
               <p className="mt-4 text-sm leading-6 text-slate-700">
-                Keep founder profiles concise, credible, and teacher-facing:
-                what you started, why it matters, and how schools can work with
-                you.
+                Their work connects classroom STEM with Pacific Northwest
+                watersheds, ocean conservation, salmon habitat, and the choices
+                that shape local ecosystems.
               </p>
             </div>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {founders.map((founder) => (
               <article
-                key={founder.role}
+                key={founder.name}
                 className="overflow-hidden rounded-[2rem] border border-forest-100 bg-white/90 shadow-sm"
               >
-                <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-forest-100 via-water-50 to-white">
-                  <div className="text-center">
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white text-2xl font-bold text-forest-700 shadow-sm">
-                      {founder.initials}
-                    </div>
-                    <div className="mt-4 inline-flex items-center gap-2 rounded-md bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-wide text-forest-700">
-                      <Camera aria-hidden="true" size={14} />
-                      Photo coming soon
-                    </div>
-                  </div>
+                <div className="relative aspect-[4/5] bg-forest-50">
+                  <Image
+                    src={founder.image}
+                    alt={founder.imageAlt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-5">
                   <h2 className="text-xl font-bold text-slate-950">
