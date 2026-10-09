@@ -72,6 +72,8 @@ export const topicFilters = [
   "Field Investigation",
   "Stream Habitat",
   "Salmon Habitat",
+  "Macroinvertebrates",
+  "Bioindicators",
   "Erosion",
   "Low Impact Development",
 ];
@@ -254,6 +256,7 @@ export const lessons: Lesson[] = [
     summary:
       "Students investigate how pollution left on the ground can be carried into streams through a simulated stream-rescue activity. Teams examine a model stream with toy fish, plants, rocks, and simulated pollution, then use tongs and sorting cups to remove only the pollution and classify what they found.",
     imageSrc: "/lesson-thumbnails/save-the-stream.png",
+    watermarkedImageSrc: "/lesson-thumbnails/save-the-stream-watermarked.jpg",
     imageAlt:
       "A small forest stream surrounded by rocks and green plants",
     gradeRange: "Kindergarten-Grade 2",
@@ -321,7 +324,8 @@ export const lessons: Lesson[] = [
     deck: {
       title: "Save the Stream!",
       pdfHref: "/lesson-downloads/save-the-stream.pdf",
-      slideImages: numberedSlideImages("save-the-stream", 9),
+      slideImages: numberedSlideImages("save-the-stream", 8),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("save-the-stream", 8),
     },
   },
   {
@@ -648,6 +652,89 @@ export const lessons: Lesson[] = [
       slideImages: numberedSlideImages("after-the-rain", 12, true),
     },
     featured: true,
+  },
+  {
+    slug: "macroinvertebrate-measurements",
+    title: "Macroinvertebrate Measurements",
+    shortDescription:
+      "Students investigate model stream communities and use aquatic macroinvertebrates as bioindicators of water quality.",
+    summary:
+      "Students learn how scientists use living organisms to evaluate stream health. Teams investigate model stream ecosystems, collect and identify aquatic macroinvertebrates, classify organisms by pollution tolerance, and use biodiversity evidence to determine the relative water quality of each stream.",
+    imageSrc: "/lesson-thumbnails/macroinvertebrate-measurements.jpg",
+    watermarkedImageSrc: "/lesson-thumbnails/macroinvertebrate-measurements-watermarked.jpg",
+    imageAlt:
+      "Macroinvertebrate Measurements lesson slide introducing freshwater organisms as stream-health indicators",
+    gradeRange: "Grades 3-5",
+    duration: "45 minutes to 1 hour",
+    durationGroup: "1 class",
+    difficulty: "Beginner",
+    activityType: "Lab Investigation",
+    materialsCost: "Low-cost classroom supplies",
+    topics: ["Water Quality", "Stream Habitat", "Macroinvertebrates", "Bioindicators"],
+    learningObjectives: [
+      "Define a macroinvertebrate and identify several common freshwater macroinvertebrates.",
+      "Distinguish between pollution-sensitive, moderately tolerant, and pollution-tolerant organisms.",
+      "Analyze stream health using the presence of different organisms.",
+      "Support a conclusion about water quality using biological evidence.",
+    ],
+    materials: [
+      "1 tray per team",
+      "Water or blue paper to create a model stream",
+      "Rocks, leaves, and plants for stream habitat",
+      "15-20 laminated organism cards or organism cutouts",
+      "1 stream organism identification guide",
+      "1 pollution-tolerance reference sheet",
+      "1 student investigation worksheet",
+      "1 small tray or cup for collecting organisms",
+      "1-2 tweezers or forceps",
+    ],
+    teacherPreparation: [
+      "Prepare model stream trays with water or blue paper, rocks, leaves, plants, and organism cards.",
+      "Create three stream setups with different organism communities representing healthy, moderately impacted, and polluted streams.",
+      "Set out organism identification guides, pollution-tolerance reference sheets, worksheets, and collection tools for each team.",
+      "Assign teams to Stream 1, Stream 2, or Stream 3 before the investigation begins.",
+    ],
+    instructions: [
+      "Introduce freshwater stream ecosystems and explain what macroinvertebrates are by breaking down the words macro and invertebrate.",
+      "Show examples of common aquatic macroinvertebrates and discuss how students might identify them.",
+      "Introduce bioindicators and explain that scientists can study living organisms to learn about environmental conditions.",
+      "Explain that different organisms have different levels of tolerance for poor water conditions.",
+      "Introduce pollution-sensitive, moderately tolerant, and pollution-tolerant organism groups.",
+      "Teams investigate their assigned model stream, collect organisms, identify and classify each organism, and use their evidence to determine relative water quality.",
+      "Bring the class together to record results and compare which stream appears healthiest and why.",
+      "Review the final takeaway: even small organisms can reveal important information about the health of an environment.",
+    ],
+    studentDeliverable:
+      "A completed student investigation worksheet with identified organisms, tolerance classifications, and a supported conclusion about stream water quality.",
+    assessmentPrompts: [
+      "Which stream appears the healthiest, and what evidence supports your conclusion?",
+      "What differences do you notice between the streams based on their macroinvertebrate communities?",
+      "Why are some organisms better indicators of clean water than others?",
+      "How can biodiversity provide clues about water quality?",
+    ],
+    realWorldConnection:
+      "Scientists use aquatic macroinvertebrates as bioindicators because the organisms living in a stream can reveal whether water quality and habitat conditions are healthy enough to support sensitive species.",
+    extensionIdeas: [
+      "Have teams compare class results in a shared chart and rank streams from healthiest to most impacted.",
+      "Ask students to design a monitoring plan for a local creek using macroinvertebrate observations.",
+      "Connect organism tolerance groups to pollution prevention actions that protect stream habitat.",
+    ],
+    downloads: [
+      {
+        label: "Student Investigation Worksheet PDF",
+        href: "/lesson-downloads/macroinvertebrate-measurements-student-investigation-worksheet.pdf",
+      },
+    ],
+    lessonPlan: {
+      label: "Macroinvertebrate Measurements Lesson Plan",
+      href: "/lesson-plans/macroinvertebrate-measurements-plan.pdf",
+    },
+    deck: {
+      title: "Macroinvertebrate Measurements",
+      pdfHref: "/lesson-downloads/macroinvertebrate-measurements.pdf",
+      slideImages: numberedSlideImages("macroinvertebrate-measurements", 11, true),
+      watermarkedSlideImages: numberedWatermarkedSlideImages("macroinvertebrate-measurements", 11, true),
+    },
   },
 ];
 

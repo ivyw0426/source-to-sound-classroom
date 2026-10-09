@@ -16,18 +16,29 @@ if (-not (Test-Path -LiteralPath $poppler)) {
 
 $watermarkedRoot = Join-Path $RepoRoot "public\lesson-slides-watermarked"
 $thumbnailDir = Join-Path $RepoRoot "public\lesson-thumbnails"
+$downloadDir = Join-Path $RepoRoot "public\lesson-downloads"
 New-Item -ItemType Directory -Force -Path $watermarkedRoot | Out-Null
 New-Item -ItemType Directory -Force -Path $thumbnailDir | Out-Null
+New-Item -ItemType Directory -Force -Path $downloadDir | Out-Null
 
 $expectedRoot = (Resolve-Path $watermarkedRoot).Path
 
 $decks = @(
+  @{
+    Slug = "build-a-salmon-redd"
+    Pdf = Join-Path $LessonsRoot "Build a Salmon Redd\WM_Build a Salmon Redd Presentation - Source to Sound.pdf"
+    Padded = $false
+    Thumbnail = "build-a-salmon-redd-watermarked.jpg"
+    ThumbnailSlide = "slide-1.jpg"
+    Download = "build-a-salmon-redd-watermarked.pdf"
+  },
   @{
     Slug = "water-filtration-challenge"
     Pdf = Join-Path $LessonsRoot "Clean the Water Filtration Challenge\WM_Clean the Water Filtration Challenge Presentation - Source to Sound.pdf"
     Padded = $false
     Thumbnail = "water-filtration-challenge-watermarked.jpg"
     ThumbnailSlide = "slide-1.jpg"
+    Download = "water-filtration-challenge-watermarked.pdf"
   },
   @{
     Slug = "raindrop-racers"
@@ -35,6 +46,7 @@ $decks = @(
     Padded = $false
     Thumbnail = "raindrop-racers-watermarked.jpg"
     ThumbnailSlide = "slide-1.jpg"
+    Download = "raindrop-racers-watermarked.pdf"
   },
   @{
     Slug = "filtration-lab"
@@ -42,6 +54,7 @@ $decks = @(
     Padded = $true
     Thumbnail = "filtration-lab-watermarked.jpg"
     ThumbnailSlide = "slide-01.jpg"
+    Download = "creating-an-ecocolumn-watermarked.pdf"
   },
   @{
     Slug = "drain-detectives"
@@ -49,6 +62,23 @@ $decks = @(
     Padded = $false
     Thumbnail = "drain-detectives-watermarked.jpg"
     ThumbnailSlide = "slide-1.jpg"
+    Download = "drain-detectives-watermarked.pdf"
+  },
+  @{
+    Slug = "save-the-stream"
+    Pdf = Join-Path $LessonsRoot "Save the Stream\WM_Save the Stream Presentation - Source to Sound.pdf"
+    Padded = $false
+    Thumbnail = "save-the-stream-watermarked.jpg"
+    ThumbnailSlide = "slide-1.jpg"
+    Download = "save-the-stream-watermarked.pdf"
+  },
+  @{
+    Slug = "macroinvertebrate-measurements"
+    Pdf = Join-Path $LessonsRoot "Macroinvertebrate Measurements\WM_Macroinvertebrate Measurements Lesson - Source to Sound.pdf"
+    Padded = $true
+    Thumbnail = "macroinvertebrate-measurements-watermarked.jpg"
+    ThumbnailSlide = "slide-01.jpg"
+    Download = "macroinvertebrate-measurements-watermarked.pdf"
   }
 )
 
@@ -80,6 +110,10 @@ foreach ($deck in $decks) {
 
   if ($deck.Thumbnail) {
     Copy-Item -LiteralPath (Join-Path $targetDir $deck.ThumbnailSlide) -Destination (Join-Path $thumbnailDir $deck.Thumbnail)
+  }
+
+  if ($deck.Download) {
+    Copy-Item -LiteralPath $deck.Pdf -Destination (Join-Path $downloadDir $deck.Download)
   }
 }
 

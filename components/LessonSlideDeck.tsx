@@ -6,13 +6,11 @@ import { useState } from "react";
 type LessonSlideDeckProps = {
   title: string;
   slideImages: string[];
-  isWatermarked?: boolean;
 };
 
 export function LessonSlideDeck({
   title,
   slideImages,
-  isWatermarked = false,
 }: LessonSlideDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const hasSlides = slideImages.length > 0;
@@ -50,14 +48,6 @@ export function LessonSlideDeck({
               alt={`${title} slide ${currentIndex + 1}`}
               className="h-full max-h-[560px] w-full object-contain"
             />
-            {isWatermarked ? (
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-x-[-12%] top-1/2 -translate-y-1/2 rotate-[-18deg] bg-white/70 py-3 text-center text-sm font-black uppercase tracking-[0.32em] text-water-900 shadow-sm sm:text-base"
-              >
-                Source to Sound Preview
-              </span>
-            ) : null}
           </div>
         ) : (
           <div className="px-6 py-16 text-center">

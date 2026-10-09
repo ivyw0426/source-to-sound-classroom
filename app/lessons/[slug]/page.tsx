@@ -137,7 +137,6 @@ export default async function LessonDetailPage({ params }: LessonPageProps) {
             <LessonSlideDeck
               title={lesson.deck.title}
               slideImages={previewSlideImages}
-              isWatermarked={!isAuthenticated}
             />
 
             <div className="grid gap-5">
