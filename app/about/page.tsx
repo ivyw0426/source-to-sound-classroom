@@ -22,7 +22,7 @@ const founders = [
     role: "Co-Founder",
     image: "/images/founders/shreya-santhosh.jpg",
     imageAlt: "Shreya Santhosh outdoors",
-    bio: "Shreya Santhosh is a senior at Tesla STEM High School with a passion for cancer biology and environmental science. She has conducted immunology research and tutors younger students through organizations like The Math Agency, and previously served as a Sustainability Ambassador promoting sustainable environmental choices. Raised in the Pacific Northwest, she is committed to educating younger generations on ocean conservation and the ways pollution and water systems affect wildlife and ecosystems.",
+    bio: "Shreya Santhosh is a senior at Tesla STEM High School interested in biology and environmental science. She has conducted genetics research at the University of Washington, exploring potential cancer therapies and mechanisms underlying disease, and has previously served as a Sustainability Ambassador, promoting sustainable environmental choices. Beyond research, she tutors elementary students in mathematics through The Math Agency, and mentors younger students in science through Science Olympiad. Raised in the Pacific Northwest, she is committed to educating younger generations on ocean conservation and the ways pollution and water systems affect wildlife and ecosystems.",
   },
   {
     name: "Ivy Wei",
