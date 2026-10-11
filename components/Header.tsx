@@ -7,7 +7,7 @@ const navItems = [
   { href: "/lessons", label: "Lessons" },
   { href: "/bootcamp", label: "Online Bootcamp", badge: true },
   { href: "/initiatives", label: "Initiatives" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
 
